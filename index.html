@@ -344,7 +344,12 @@
                 <svg aria-hidden="true" width="645" height="4">
                   <use href="assets/images/icons/sprite.svg#menu-line"></use>
                 </svg>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>
+                  Discover the powerful benefits of incorporating a colorful variety of fruits and
+                  vegetables into your daily diet. We explore the latest nutritional science on how
+                  these natural whole foods can boost your immune system and provide essential
+                  vitamins to help protect your body against common diseases.
+                </p>
 
                 <a
                   href="."
@@ -387,7 +392,12 @@
                 <svg aria-hidden="true" width="645" height="4">
                   <use href="assets/images/icons/sprite.svg#menu-line"></use>
                 </svg>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>
+                  Welcome the fresh flavors of spring with this light and vibrant salad. Crisp
+                  asparagus pairs perfectly with peppery rocket leaves, while crumbled goat's cheese
+                  adds a rich, creamy texture. It's an elegant yet simple dish that is perfect for a
+                  quick weekday lunch or a weekend dinner party starter.
+                </p>
 
                 <a
                   href="."
@@ -400,16 +410,285 @@
           </ul>
         </div>
       </section>
-      <!-- reservation -->
-      <section aria-labelledby="make a reservation">
+      <!-- RESERVATION -->
+      <section aria-labelledby="reservation-heading">
+        <header class="header-section">
+          <h1 id="reservation-heading" class="main-title">Make a Reservation</h1>
+          <p class="subtitle">Get in touch with restaurant</p>
+        </header>
+
+        <form action="." method="POST">
+          <fieldset>
+            <legend class="sr-only">Details of reservation</legend>
+            <div class="form-grid">
+              <!-- date -->
+              <div class="input-group">
+                <label for="reservation-date" class="sr-only">Date of reservation</label>
+                <input
+                  type="date"
+                  id="reservation-date"
+                  name="date"
+                  value="2021-06-22"
+                  required
+                  aria-required="true"
+                  class="form-control"
+                />
+                <svg
+                  class="input-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <use href="assets/images/icons/sprite.svg#angle-down"></use>
+                </svg>
+              </div>
+
+              <!-- time -->
+              <div class="input-group">
+                <label for="reservation-time" class="sr-only">Time of reservation</label>
+                <input
+                  type="time"
+                  id="reservation-time"
+                  name="time"
+                  value="18:00"
+                  step="1800"
+                  required
+                  aria-required="true"
+                  class="form-control"
+                />
+                <svg
+                  class="input-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <use href="assets/images/icons/sprite.svg#angle-down"></use>
+                </svg>
+              </div>
+
+              <!-- persons -->
+              <div class="input-group">
+                <label for="reservation-party" class="sr-only">Number of person</label>
+                <select
+                  id="reservation-party"
+                  name="party_size"
+                  required
+                  aria-required="true"
+                  class="form-control"
+                >
+                  <option value="1">1 Person</option>
+                  <option value="2" selected>2 Person</option>
+                  <option value="3">3 Person</option>
+                  <option value="4">4 Person</option>
+                  <option value="6">6 Person</option>
+                </select>
+                <svg
+                  class="input-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <use href="assets/images/icons/sprite.svg#angle-down"></use>
+                </svg>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn-submit">Book Now</button>
+        </form>
+      </section>
+
+      <!-- CALORIES ENERGY BALANCE (Categories) -->
+      <section aria-labelledby="categories-heading">
         <div>
-          <h2 id="blog-heading">Make a Reservation</h2>
-          <p>Get in touch with restaurant</p>
+          <h2 id="categories-heading">Calories Energy Balance</h2>
+          <p>
+            We believe that healthy eating doesn't mean compromising on taste. Our menu is carefully
+            curated to offer a perfect balance of essential nutrients and bold flavors. Explore our
+            categories to find dishes designed to fuel your body and satisfy your cravings, whether
+            you're looking for a light starter or a hearty main course.
+          </p>
+
+          <ul aria-label="Menu categories">
+            <li>
+              <a href="." aria-labelledby="category-starters">
+                <h3 id="category-starters">Starters</h3>
+                <svg aria-hidden="true" width="24" height="24">
+                  <use href="assets/images/icons/sprite.svg#arrow-right"></use>
+                </svg>
+                <img
+                  src="./assets/images/content/starters.jpg"
+                  alt="Plated starters with fresh herbs"
+                  loading="lazy"
+                  width="508"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="." aria-labelledby="category-mains">
+                <h3 id="category-mains">Mains</h3>
+                <svg aria-hidden="true" width="24" height="24">
+                  <use href="assets/images/icons/sprite.svg#arrow-right"></use>
+                </svg>
+                <img
+                  src="./assets/images/content/mains.jpg"
+                  alt="Roasted meat main course with vegetables"
+                  loading="lazy"
+                  width="508"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="." aria-labelledby="category-soups">
+                <h3 id="category-soups">Soups</h3>
+                <svg aria-hidden="true" width="24" height="24">
+                  <use href="assets/images/icons/sprite.svg#arrow-right"></use>
+                </svg>
+                <img
+                  src="./assets/images/content/cream-soups.jpg"
+                  alt="Bowl of creamy soup garnished with herbs"
+                  loading="lazy"
+                  width="508"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TESTIMONIAL SECTION -->
+      <section aria-label="Customer Testimonial">
+        <div>
+          <figure>
+            <blockquote>
+              <p>
+                "The culinary experience at Food Zero exceeded all my expectations. Every dish is a
+                masterful blend of flavor and presentation. The ambiance is perfect for both casual
+                dining and special occasions. Highly recommended!
+              </p>
+            </blockquote>
+
+            <!-- Decorative quote icon -->
+            <svg aria-hidden="true" width="282" height="234">
+              <use href="assets/images/icons/sprite.svg#quote-marks"></use>
+            </svg>
+
+            <figcaption>
+              <img
+                src="./assets/images/content/avatar-john.png"
+                alt="John Doe"
+                loading="lazy"
+                width="170"
+                height="170"
+              />
+              <div>
+                <cite>John Doe</cite>
+                <p>Blogger</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <nav aria-label="Testimonial pagination">
+            <button type="button" aria-label="Previous testimonial">
+              <svg aria-hidden="true" width="48">
+                <use href="assets/images/icons/sprite.svg#arrow-left"></use>
+              </svg>
+            </button>
+            <span aria-live="polite">2 / 3</span>
+            <button type="button" aria-label="Next testimonial">
+              <svg aria-hidden="true" width="48">
+                <use href="assets/images/icons/sprite.svg#arrow-right"></use>
+              </svg>
+            </button>
+          </nav>
         </div>
       </section>
     </main>
 
-    <!-- footer -->
-    <footer></footer>
+    <!-- FOOTER SECTION -->
+    <footer>
+      <div>
+        <!-- Brand -->
+        <div>
+          <a href="." aria-label="FoodZero Home">
+            Food <br />
+            Zero.
+          </a>
+        </div>
+
+        <!-- Contact Info using <address> -->
+        <address aria-label="Contact Information">
+          <p><strong>Contact</strong></p>
+          <ul>
+            <li><a href="tel:+186852346000">+1+86 852 346 000</a></li>
+            <li><a href="mailto:info@foodzero.com">info@foodzero.com</a></li>
+          </ul>
+          <p>
+            1959 Sepulveda Blvd.<br />
+            Culver City, CA, 90230
+          </p>
+        </address>
+
+        <!-- Newsletter Subscription -->
+        <div>
+          <form action="/" method="POST" aria-labelledby="newsletter-heading">
+            <h2 id="newsletter-heading">Never Miss a Recipe</h2>
+
+            <div>
+              <label for="newsletter-email" class="sr-only">Email Address</label>
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </div>
+
+            <b>Join our subscribers and get best recipe delivered each week.</b>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div>
+        <p>&copy; 2020 Zero Inc. All rights Reserved</p>
+
+        <ul aria-label="Social media links">
+          <li>
+            <a href="#" aria-label="Follow us on Instagram">
+              <svg aria-hidden="true" width="28">
+                <use href="assets/images/icons/sprite.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Follow us on Twitter">
+              <svg aria-hidden="true" width="28">
+                <use href="assets/images/icons/sprite.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Follow us on Facebook">
+              <svg aria-hidden="true" width="28">
+                <use href="assets/images/icons/sprite.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Subscribe to our YouTube channel">
+              <svg aria-hidden="true" width="28">
+                <use href="assets/images/icons/sprite.svg#youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
