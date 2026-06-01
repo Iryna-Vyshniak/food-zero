@@ -1,0 +1,25 @@
+{
+  "name": "food-zero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iryna-Vyshniak/food-zero.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iryna-Vyshniak/food-zero/issues"
+  },
+  "homepage": "https://github.com/Iryna-Vyshniak/food-zero#readme",
+  "devDependencies": {
+    "vite": "^8.0.16"
+  }
+}
