@@ -22,18 +22,21 @@
   --fs-nav: clamp(1.5rem, 4vw, 4.125rem);
   --fs-body-lg: clamp(1.125rem, 1.5vw, 1.5rem);
   --fs-body: clamp(1rem, 1.2vw, 1.25rem);
-  --fs-btn: clamp(1.2rem, 1.5rem, 2rem);
+  --fs-body-s: clamp(.875rem, 1vw, 1.125rem);
+  --fs-body-xs: clamp(.75rem, 0.8vw, .875rem);
+  --fs-info: clamp(1.2rem, 1.5rem, 2rem);
 
   --grid-max-width: 1644px;
   --grid-gutter: clamp(1.5rem, 4vw, 3.75rem);
   --container-padding: clamp(1.25rem, 5vw, 8.625rem);
 
-  --sp-xs: clamp(0.5rem, 1vw, 1rem);
+  --sp-xs: clamp(.5rem, 1vw, 1rem);
   --sp-sm: clamp(1rem, 2vw, 2rem);
+  --sp-m: clamp(1.2rem, 2.2vw, 3.4375rem);
   --sp-md: clamp(2rem, 4vw, 4rem);
   --sp-lg: clamp(4rem, 8vw, 8rem);
   --sp-xl: clamp(6rem, 12vw, 12rem);
 
-  --br-sm: 4px;
+  --br-sm: .25rem;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
