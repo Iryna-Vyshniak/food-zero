@@ -15,10 +15,6 @@
   margin-block-end: var(--sp-lg);
 }
 
-.reservation__title {
-  font-size: var(--fs-h2);
-}
-
 .reservation__form {
   max-inline-size: 100%;
   margin-inline: auto;
