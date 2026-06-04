@@ -1,0 +1,26 @@
+.text-h1 {
+  font-size: var(--fs-hero);
+  font-family: var(--ff-heading);
+}
+.text-h2 {
+  font-size: var(--fs-h2);
+  font-family: var(--ff-heading);
+}
+.text-h3 {
+  font-size: var(--fs-h3);
+  font-family: var(--ff-heading);
+  line-height: 1.24;
+}
+.text-h4 {
+  font-size: var(--fs-h4);
+  font-family: var(--ff-heading);
+  line-height: 1.33;
+}
+
+.color-inverse {
+  color: var(--c-bg-white);
+}
+
+.color-primary {
+  color: var(--c-text-black);
+}

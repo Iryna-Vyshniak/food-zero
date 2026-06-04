@@ -1,0 +1,62 @@
+/* =========================================
+   BUTTON COMPONENT
+   ========================================= */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+
+  padding-block: 1.25rem;
+  padding-inline: 2.875rem;
+  width: max-content;
+  
+  border: 2px solid var(--c-bg-white);
+  color: var(--c-bg-white);
+
+  font-family: var(--ff-heading);
+  font-size: var(--fs-info);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--c-bg-white);
+  color: var(--c-brand-dark);
+  outline: 2px solid var(--c-bg-white);
+  outline-offset: 2px;
+}
+
+/* Primary Modifier */
+.btn--primary {
+  background-color: var(--c-brand-dark);
+  border-color: var(--c-brand-dark);
+  color: var(--c-bg-white);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background-color: var(--c-brand-olive);
+  color: var(--c-bg-white);
+  outline-color: var(--c-brand-dark);
+}
+
+/* Outline Dark Modifier */
+.btn--outline-dark {
+  color: var(--c-text-black);
+  border-color: var(--c-text-black);
+}
+
+.btn--outline-dark:hover,
+.btn--outline-dark:focus-visible {
+  background-color: var(--c-text-black);
+  color: var(--c-bg-white);
+  outline-color: var(--c-text-black);
+}

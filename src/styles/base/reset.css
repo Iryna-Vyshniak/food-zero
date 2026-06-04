@@ -15,31 +15,34 @@ body {
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   color: var(--c-text-dark-grey);
-  background-color: var(--c-bg-primary);
+  background-color: var(--c-bg-white);
   line-height: 1.6;
   overflow-inline: hidden;
   -webkit-font-smoothing: antialiased;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--ff-heading);
-  color: var(--c-text-black);
   line-height: 1.1;
   font-weight: 700;
 }
+
 a {
   color: inherit;
+  font-style: normal;
   text-decoration: none;
   transition: color var(--transition);
 }
+
 a:hover,
 a:focus-visible {
   color: var(--c-brand-light);
 }
+
 img {
   max-inline-size: 100%;
   block-size: auto;
@@ -68,9 +71,11 @@ select {
   background: none;
   outline: none;
 }
+
 button {
   cursor: pointer;
 }
+
 fieldset {
   border: none;
   padding: 0;
@@ -91,8 +96,4 @@ fieldset {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-.center {
-  align-items: center;
 }
