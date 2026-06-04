@@ -1,0 +1,68 @@
+<section
+  id='reservations'
+  class='reservation section-spacing'
+  aria-labelledby='reservation-heading'
+>
+  <div class='container'>
+    <header class='reservation__header'>
+      <h2 id='reservation-heading' class='reservation__title'>Make a Reservation</h2>
+      <p class='subtitle'>Get in touch with restaurant</p>
+    </header>
+
+    <form action='/' method='POST' class='reservation__form'>
+      <fieldset>
+        <legend class='sr-only'>Details of reservation</legend>
+        <div class='form-grid'>
+          <!-- Date -->
+          <div class='input-group'>
+            <label for='reservation-date' class='sr-only'>Date of reservation</label>
+            <input
+              type='date'
+              id='reservation-date'
+              name='date'
+              value='2026-06-22'
+              required
+              class='form-control'
+            />
+            <svg class='input-icon' aria-hidden='true'>
+              <use href='#icon-angle-down'></use>
+            </svg>
+          </div>
+
+          <!-- Time -->
+          <div class='input-group'>
+            <label for='reservation-time' class='sr-only'>Time of reservation</label>
+            <input
+              type='time'
+              id='reservation-time'
+              name='time'
+              value='18:00'
+              step='1800'
+              required
+              class='form-control'
+            />
+            <svg class='input-icon' aria-hidden='true'>
+              <use href='#icon-angle-down'></use>
+            </svg>
+          </div>
+
+          <!-- Party -->
+          <div class='input-group'>
+            <label for='reservation-party' class='sr-only'>Number of person</label>
+            <select id='reservation-party' name='party_size' required class='form-control'>
+              <option value='1'>1 Person</option>
+              <option value='2' selected>2 Person</option>
+              <option value='3'>3 Person</option>
+              <option value='4'>4 Person</option>
+              <option value='6'>6 Person</option>
+            </select>
+            <svg class='input-icon' aria-hidden='true'>
+              <use href='#icon-angle-down'></use>
+            </svg>
+          </div>
+        </div>
+      </fieldset>
+      <button type='submit' class='btn btn--primary'>Book Now</button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,105 @@
+/* =========================================
+   FORM & RESERVATION COMPONENT
+   ========================================= */
+.reservation {
+  background-color: var(--c-bg-primary);
+  text-align: center;
+}
+
+.reservation__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.125rem; 
+  margin-block-end: var(--sp-lg);
+}
+
+.reservation__title {
+  font-size: var(--fs-h2);
+}
+
+.reservation__form {
+  max-inline-size: 100%;
+  margin-inline: auto;
+  display: grid;
+  justify-items: center; 
+}
+
+.reservation__form fieldset {
+  margin-block-end: var(--sp-lg);
+  inline-size: 100%; 
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile first */
+  gap: 1.5rem;
+  text-align: start; 
+}
+
+.input-group {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+}
+
+.form-control {
+  inline-size: 100%;
+  padding-block: 1rem;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 3rem; 
+  border: 1px solid var(--c-text-black);
+  background-color: transparent !important;
+  color: var(--c-text-black);
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
+  transition: outline var(--transition);
+  font-family: var(--ff-body);
+}
+
+.form-control:focus-visible {
+  outline: 2px solid var(--c-brand-dark);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   NATIVE ICON RESET & CUSTOM SVG
+   ========================================= */
+.form-control::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset-inline-end: 1.2rem;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  opacity: 0; 
+  cursor: pointer;
+  z-index: 2; 
+}
+
+.input-icon {
+  position: absolute;
+  inset-inline-end: 1.2rem;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: 1.25rem; 
+  block-size: 1.25rem;
+  pointer-events: none; 
+  stroke: var(--c-text-black);
+  fill: none;
+  z-index: 1
+}
+
+/* =========================================
+   CONTAINER QUERIES
+   ========================================= */
+@container (min-inline-size: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
