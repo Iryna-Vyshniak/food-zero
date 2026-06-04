@@ -1,0 +1,39 @@
+/* =========================================
+   DESIGN SYSTEM & TOKENS
+   ========================================= */
+:root {
+  --c-brand-dark: #233000;
+  --c-brand-olive: #5e6600;
+  --c-brand-light: #9caa00;
+  --c-bg-primary: #ebf0e4;
+  --c-bg-white: #ffffff;
+  --c-text-black: #000000;
+  --c-text-dark-grey: #4d4d4d;
+  --c-text-light-grey: #b0b0b0;
+
+  --ff-heading: 'Rufina', serif;
+  --ff-body: 'Lato', sans-serif;
+
+  --fs-hero: clamp(3.5rem, 8vw, 9.25rem);
+  --fs-h1: clamp(2.5rem, 6vw, 6.75rem);
+  --fs-h2: clamp(2rem, 5vw, 5.5rem);
+  --fs-h3: clamp(1.75rem, 4vw, 4.25rem);
+  --fs-h4: clamp(1.5rem, 3vw, 3rem);
+  --fs-nav: clamp(1.5rem, 4vw, 4.125rem);
+  --fs-body-lg: clamp(1.125rem, 1.5vw, 1.5rem);
+  --fs-body: clamp(1rem, 1.2vw, 1.25rem);
+  --fs-btn: clamp(1.2rem, 1.5rem, 2rem);
+
+  --grid-max-width: 1644px;
+  --grid-gutter: clamp(1.5rem, 4vw, 3.75rem);
+  --container-padding: clamp(1.25rem, 5vw, 8.625rem);
+
+  --sp-xs: clamp(0.5rem, 1vw, 1rem);
+  --sp-sm: clamp(1rem, 2vw, 2rem);
+  --sp-md: clamp(2rem, 4vw, 4rem);
+  --sp-lg: clamp(4rem, 8vw, 8rem);
+  --sp-xl: clamp(6rem, 12vw, 12rem);
+
+  --br-sm: 4px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

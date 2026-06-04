@@ -1,0 +1,98 @@
+/* =========================================
+   RESET & BASE (Logical Properties Applied)
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--c-text-dark-grey);
+  background-color: var(--c-bg-primary);
+  line-height: 1.6;
+  overflow-inline: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-heading);
+  color: var(--c-text-black);
+  line-height: 1.1;
+  font-weight: 700;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover,
+a:focus-visible {
+  color: var(--c-brand-light);
+}
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  display: block;
+  object-fit: cover;
+}
+
+img:not([src$=".svg"]) {
+  background-color: var(--c-text-light-grey);
+}
+
+img[src$=".svg"] {
+  background-color: transparent;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+}
+:focus-visible {
+  outline: 2px solid var(--c-brand-dark);
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.center {
+  align-items: center;
+}
