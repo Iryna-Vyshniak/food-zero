@@ -1,0 +1,83 @@
+<dialog
+  class='overlay-menu'
+  id='mobile-menu'
+  aria-label='Mobile navigation menu'
+>
+  <div class='overlay-menu__inner'>
+    <header class='overlay-menu__header'>
+      <button
+        class='overlay-menu__close'
+        id='menu-close-btn'
+        type='button'
+        aria-label='Close menu'
+      >
+        <svg class="icon-close" aria-hidden="true"
+        >
+         <use href="#icon-close"></use>
+        </svg>
+      </button>
+    </header>
+
+    <div class='overlay-menu__body'>
+      <nav aria-label='Overlay navigation'>
+        <ul class='overlay-nav__list'>
+          <li><a
+              href='/'
+              class='overlay-nav__link'
+            >Home</a></li>
+          <li><a
+              href='/menu.html'
+              class='overlay-nav__link'
+            >Menu</a></li>
+
+          <li class='overlay-nav__item'>
+            <button
+              class='overlay-nav__toggle'
+              type='button'
+              aria-expanded='false'
+              aria-controls='blogs-submenu'
+            >
+              Blogs
+            </button>
+            <ul
+              class='overlay-nav__sublist'
+              id='blogs-submenu'
+            >
+              <li><a
+                  href='/blog-list.html'
+                  class='overlay-nav__sublink'
+                >1 Column</a></li>
+              <li><a
+                  href='/blog-list-2.html'
+                  class='overlay-nav__sublink'
+                >2 Columns</a></li>
+              <li><a
+                  href='/single-post.html'
+                  class='overlay-nav__sublink'
+                >Single Post</a></li>
+            </ul>
+          </li>
+
+          <li><a
+              href='/about.html'
+              class='overlay-nav__link'
+            >About</a></li>
+          <li><a
+              href='/contact.html'
+              class='overlay-nav__link'
+            >Contact</a></li>
+        </ul>
+      </nav>
+
+      <div
+        class='overlay-menu__contact'
+        aria-label='Contact Information'
+      >
+        <h3 class='overlay-menu__contact-title'>Contact</h3>
+        {{> address }}
+
+       {{> social-links }}
+      </div>
+    </div>
+  </div>
+</dialog>
