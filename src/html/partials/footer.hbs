@@ -1,0 +1,53 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand-col">
+        <a
+          href="/"
+          class="footer__brand"
+        >
+          Food <br /> Zero.
+        </a>
+      </div>
+
+      <div class="footer__contact">
+        <h3 class="footer__contact-title">Contact</h3>
+        {{> address }}
+      </div>
+
+      <div class="footer__newsletter">
+        <h3 class="footer__newsletter-title">Never Miss a Recipe</h3>
+        <form
+          action="/"
+          method="POST"
+        >
+          <div class="newsletter-form__inner">
+            <label
+              for="newsletter-email"
+              class="sr-only"
+            >Email Address</label>
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              class="newsletter-form__input"
+              placeholder="Email Address"
+              required
+            />
+            <button
+              type="submit"
+              class="newsletter-form__btn"
+            >Subscribe</button>
+          </div>
+
+          <p><small>Join our subscribers and get best recipe delivered each week!</small></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Zero Inc. All rights Reserved</p>
+      {{> social-links }}
+    </div>
+  </div>
+</footer>

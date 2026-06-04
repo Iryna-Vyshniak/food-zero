@@ -1,0 +1,113 @@
+.footer {
+  background-color: var(--c-brand-dark);
+  color: var(--c-bg-white);
+  padding-block-start: var(--sp-xl);
+  padding-block-end: var(--sp-md);
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-lg);
+  margin-block-end: var(--sp-xl);
+}
+
+.footer__brand {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.2;
+  display: block;
+  color: var(--c-bg-white);
+  text-decoration: none;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-m); 
+}
+
+.footer__contact-title,
+.footer__newsletter-title {
+  font-family: var(--ff-heading); 
+  font-size: var(--fs-info);
+  color: var(--c-bg-white);
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+
+.footer__newsletter-title {
+  margin-block-end: var(--sp-m);
+}
+
+.newsletter-form__inner {
+  display: flex;
+  gap: .75rem;
+  margin-block-end: var(--sp-sm);
+}
+
+.newsletter-form__input {
+  flex-grow: 1;
+  padding: 16px;
+  color: var(--c-bg-white);
+  background: transparent;
+  border: .0625rem solid var(--c-bg-white);
+  outline: none;
+}
+
+.newsletter-form__input::placeholder {
+  color: var(--c-text-light-grey);
+}
+
+.newsletter-form__btn {
+  padding-block: 16px;
+  padding-inline: 32px;
+  background-color: var(--c-brand-olive);
+  color: var(--c-bg-white);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.newsletter-form__btn:hover {
+  background-color: var(--c-brand-light);
+}
+
+.footer__newsletter small {
+  font-size: var(--fs-body-xs);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.footer__bottom {
+  border-block-start: .0625rem dashed var(--c-text-dark-grey);
+  padding-block-start: var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-sm);
+  text-align: center;
+}
+
+.footer__bottom p {
+font-weight: 400;
+font-size: var(--fs-body-lg);
+line-height: 1.4;
+letter-spacing: 0.02em;
+color: var(--c-bg-white);
+}
+
+
+@container (min-inline-size: 48rem) {
+  .footer__top {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
