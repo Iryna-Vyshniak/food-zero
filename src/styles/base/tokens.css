@@ -20,6 +20,7 @@
   --fs-h4: clamp(1.5rem, 3vw, 3rem);
   --fs-nav: clamp(1.5rem, 4vw, 4.125rem);
   --fs-body-lg: clamp(1.125rem, 1.5vw, 1.5rem);
+  --fs-body-m: clamp(1.2rem, 2vw, 2rem);
   --fs-body: clamp(1rem, 1.2vw, 1.25rem);
   --fs-body-s: clamp(.875rem, 1vw, 1.125rem);
   --fs-body-xs: clamp(.75rem, 0.8vw, .875rem);

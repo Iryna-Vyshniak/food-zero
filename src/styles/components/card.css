@@ -1,0 +1,232 @@
+/* =========================================
+   REUSABLE CARDS (Blog & Categories)
+   ========================================= */
+
+/* Blog Card */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+
+  position: relative;
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-xl);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 1. CRITICAL: Видаляємо <li> з дерева рендерингу, щоб .blog-card став Grid-елементом */
+.blog__grid > li {
+  display: contents;
+}
+
+.blog-card {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+  gap: var(--sp-sm);
+  align-items: start;
+  position: relative;
+}
+
+.blog-card > * {
+  margin: 0;
+}
+
+.blog-card__img-wrapper {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.blog-card__img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.blog-card__tag {
+  position: absolute;
+  inset-block-start: var(--sp-sm);
+  inset-inline-end: var(--sp-sm);
+  background-color: var(--c-brand-olive);
+  color: var(--c-bg-white);
+  padding-block: 0.25rem;
+  padding-inline: 1rem;
+  font-size: 0.875rem;
+
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  font-size: var(--fs-body-lg);
+  line-height: 1.8;
+}
+
+.blog-card__meta {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-sm);
+  font-size: 0.875rem;
+  color: var(--c-text-dark-grey);
+}
+
+.blog-card__meta-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+}
+
+.blog-card__meta-details > * {
+  white-space: nowrap;
+}
+
+.blog-card__avatar {
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.blog-card__title {
+  padding-block-end: 0.75rem;
+  border-bottom: 0.125rem dashed var(--c-brand-dark);
+  transition: border-color var(--transition);
+}
+
+.blog-card__title a {
+  color: var(--c-text-black);
+  text-decoration: none;
+  transition: color var(--transition);
+  display: block;
+}
+
+.blog-card__link {
+  font-weight: 700;
+  color: var(--c-text-black);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block-start: auto;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.blog-card__link svg {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  fill: currentColor;
+  transition: transform var(--transition);
+}
+
+.blog-card:hover .blog-card__img,
+.blog-card:focus-within .blog-card__img {
+  transform: scale(1.05);
+}
+
+.blog-card:hover .blog-card__title a,
+.blog-card:focus-within .blog-card__title a {
+  color: var(--c-brand-light);
+}
+
+.blog-card:hover .blog-card__title,
+.blog-card:focus-within .blog-card__title {
+  border-color: var(--c-brand-light);
+}
+
+.blog-card:hover .blog-card__link,
+.blog-card:focus-within .blog-card__link {
+  color: var(--c-brand-light);
+}
+
+.blog-card:hover .blog-card__link svg,
+.blog-card:focus-within .blog-card__link svg {
+  transform: translateX(6px);
+}
+
+/* =========================================
+   DESKTOP SUBGRID
+   ========================================= */
+@container (min-inline-size: 768px) {
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--sp-md);
+    column-gap: var(--grid-gutter);
+  }
+
+  /* Прогресивне покращення: перевірка підтримки subgrid */
+  @supports (grid-template-rows: subgrid) {
+    .blog-card {
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+    }
+  }
+}
+
+/* =========================================
+   CATEGORY CARD COMPONENT
+   ========================================= */
+.category-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.category-card img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.category-card:hover img,
+.category-card:focus-visible img {
+  transform: scale(1.05);
+}
+
+.category-card__title {
+  position: absolute;
+  inset-block-start: var(--sp-sm);
+  inset-inline: var(--sp-sm);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-block: 0.75rem;
+  padding-inline: 1.25rem;
+  border-radius: var(--br-sm);
+
+  color: var(--c-brand-dark);
+  background-color: transparent;
+  backdrop-filter: blur(0);
+
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    backdrop-filter var(--transition);
+}
+
+.category-card__title svg {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  fill: currentColor;
+  transition: transform var(--transition);
+}
+
+.category-card:hover .category-card__title,
+.category-card:focus-visible .category-card__title {
+  color: var(--c-brand-olive);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.category-card:hover .category-card__title svg,
+.category-card:focus-visible .category-card__title svg {
+  transform: translateX(4px);
+}
