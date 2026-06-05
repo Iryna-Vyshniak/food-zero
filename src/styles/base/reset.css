@@ -20,14 +20,16 @@ html:focus-within {
 }
 
 body {
-  text-rendering:optimizeLegibility;
+  text-rendering: optimizeLegibility;
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   color: var(--c-text-dark-grey);
   background-color: var(--c-bg-white);
   line-height: 1.6;
   overflow-inline: hidden;
-  transition: background-color 240ms ease, color 240ms ease;
+  transition:
+    background-color 240ms ease,
+    color 240ms ease;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -73,9 +75,7 @@ ol {
   list-style: none;
 }
 
-:where(button,
-input,
-select) {
+:where(button, input, select) {
   font-family: inherit;
   font-size: inherit;
   border: none;
@@ -87,11 +87,17 @@ button {
   cursor: pointer;
 }
 
-:where(a,button,input){outline:none}
+:where(a, button, input) {
+  outline: none;
+}
 
 :where(a, button, input):focus-visible {
   outline: 2px dashed var(--c-brand-light);
   outline-offset: 4px;
+}
+
+:where(a, button) {
+  touch-action: manipulation;
 }
 
 fieldset {
@@ -112,6 +118,20 @@ fieldset {
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  inset-inline-start: -9999px;
+  inset-block-start: auto;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--c-text-dark-grey);
+  color: var(--c-bg-white);
+  padding: 0.5rem 0.75rem;
+  z-index: 1000;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0ms !important;
@@ -120,3 +140,9 @@ fieldset {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* * {
+  outline: 1px solid red !important;
+  background: rgba(255, 0, 0, 0.05) !important;
+} */

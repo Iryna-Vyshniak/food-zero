@@ -1,13 +1,6 @@
 /* =========================================
    LAYOUT UTILITIES & CONTAINERS
    ========================================= */
-   
-/* Кожна основна секція стає незалежним контейнером */
-header,
-section,
-footer {
-  container-type: inline-size;
-}
 
 .container {
   inline-size: 100%;
@@ -20,3 +13,13 @@ footer {
   display: grid;
   gap: var(--grid-gutter);
 }
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sp-m);
+}
+

@@ -24,3 +24,10 @@
 .color-primary {
   color: var(--c-text-black);
 }
+
+.subtitle {
+font-weight: 400;
+font-size: var(--fs-body-lg);
+line-height: 1.4;
+letter-spacing: 0.02em;
+}
