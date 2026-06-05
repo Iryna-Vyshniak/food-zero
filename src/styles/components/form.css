@@ -4,14 +4,11 @@
 .reservation {
   background-color: var(--c-bg-primary);
   text-align: center;
+  container-type: inline-size;
+  container-name: reservation;
 }
 
 .reservation__header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.125rem; 
   margin-block-end: var(--sp-lg);
 }
 
@@ -19,19 +16,19 @@
   max-inline-size: 100%;
   margin-inline: auto;
   display: grid;
-  justify-items: center; 
+  justify-items: center;
 }
 
 .reservation__form fieldset {
   margin-block-end: var(--sp-lg);
-  inline-size: 100%; 
+  inline-size: 100%;
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: 1fr; /* Mobile first */
   gap: 1.5rem;
-  text-align: start; 
+  text-align: start;
 }
 
 .input-group {
@@ -44,7 +41,7 @@
   inline-size: 100%;
   padding-block: 1rem;
   padding-inline-start: 1.5rem;
-  padding-inline-end: 3rem; 
+  padding-inline-end: 3rem;
   border: 1px solid var(--c-text-black);
   background-color: transparent !important;
   color: var(--c-text-black);
@@ -73,9 +70,9 @@
   block-size: 1.5rem;
   margin: 0;
   padding: 0;
-  opacity: 0; 
+  opacity: 0;
   cursor: pointer;
-  z-index: 2; 
+  z-index: 2;
 }
 
 .input-icon {
@@ -83,18 +80,18 @@
   inset-inline-end: 1.2rem;
   inset-block-start: 50%;
   transform: translateY(-50%);
-  inline-size: 1.25rem; 
+  inline-size: 1.25rem;
   block-size: 1.25rem;
-  pointer-events: none; 
+  pointer-events: none;
   stroke: var(--c-text-black);
   fill: none;
-  z-index: 1
+  z-index: 1;
 }
 
 /* =========================================
    CONTAINER QUERIES
    ========================================= */
-@container (min-inline-size: 768px) {
+@container reservation (min-inline-size: 48rem) {
   .form-grid {
     grid-template-columns: repeat(3, 1fr);
   }

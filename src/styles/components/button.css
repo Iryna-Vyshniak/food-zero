@@ -9,12 +9,14 @@
   flex-direction: row;
   gap: 10px;
 
-  padding-block: 1.25rem;
-  padding-inline: 2.875rem;
-  width: max-content;
+  padding-block: var(--sp-xs);
+  padding-inline: var(--sp-xs);
+   min-inline-size: clamp(12.5rem, calc(12.5rem + 5.3 * var(--vw-range)), 17.8125rem);
+  min-block-size: clamp(3.75rem,  calc(3.75rem  + 1.8  * var(--vw-range)), 5.5rem);
   
-  border: 2px solid var(--c-bg-white);
+  border: .125rem solid var(--c-bg-white);
   color: var(--c-bg-white);
+  background-color: transparent;
 
   font-family: var(--ff-heading);
   font-size: var(--fs-info);

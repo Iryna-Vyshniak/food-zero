@@ -151,7 +151,7 @@
 /* =========================================
    DESKTOP SUBGRID
    ========================================= */
-@container (min-inline-size: 768px) {
+@container (min-inline-size: 48rem) {
   .blog__grid {
     grid-template-columns: repeat(2, 1fr);
     row-gap: var(--sp-md);

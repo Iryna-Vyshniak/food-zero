@@ -3,6 +3,8 @@
   color: var(--c-bg-white);
   padding-block-start: var(--sp-xl);
   padding-block-end: var(--sp-md);
+  container-type: inline-size;
+  container-name: footer;
 }
 
 .footer__top {
@@ -25,18 +27,17 @@
 .footer__contact {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-m); 
+  gap: var(--sp-m);
 }
 
 .footer__contact-title,
 .footer__newsletter-title {
-  font-family: var(--ff-heading); 
+  font-family: var(--ff-heading);
   font-size: var(--fs-info);
   color: var(--c-bg-white);
   line-height: 1.5;
   font-weight: 700;
 }
-
 
 .footer__newsletter-title {
   margin-block-end: var(--sp-m);
@@ -44,7 +45,7 @@
 
 .newsletter-form__inner {
   display: flex;
-  gap: .75rem;
+  gap: 0.75rem;
   margin-block-end: var(--sp-sm);
 }
 
@@ -53,7 +54,7 @@
   padding: 16px;
   color: var(--c-bg-white);
   background: transparent;
-  border: .0625rem solid var(--c-bg-white);
+  border: 0.0625rem solid var(--c-bg-white);
   outline: none;
 }
 
@@ -83,7 +84,7 @@
 }
 
 .footer__bottom {
-  border-block-start: .0625rem dashed var(--c-text-dark-grey);
+  border-block-start: 0.0625rem dashed var(--c-text-dark-grey);
   padding-block-start: var(--sp-md);
   display: flex;
   flex-direction: column;
@@ -93,15 +94,14 @@
 }
 
 .footer__bottom p {
-font-weight: 400;
-font-size: var(--fs-body-lg);
-line-height: 1.4;
-letter-spacing: 0.02em;
-color: var(--c-bg-white);
+  font-weight: 400;
+  font-size: var(--fs-body-lg);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--c-bg-white);
 }
 
-
-@container (min-inline-size: 48rem) {
+@container footer (min-inline-size: 48rem) {
   .footer__top {
     grid-template-columns: 1fr 1fr 2fr;
   }
