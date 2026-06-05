@@ -1,686 +1,549 @@
-<!DOCTYPE  html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-
-    <title>FoodZero | Healthy Eating Restaurant</title>
-    <meta
-      name="description"
-      content="Experience healthy, sustainable dining at FoodZero. View our menu and book your table today."
-    />
-
-    <meta
-      property="og:title"
-      content="FoodZero | Healthy Eating Restaurant"
-    />
-    <meta
-      property="og:description"
-      content="Experience healthy, sustainable dining at FoodZero. View our menu and book your table today."
-    />
-    <meta
-      property="og:type"
-      content="website"
-    />
-
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    >
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    >
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Lato:ital,wght@0,400;0,700;1,700&family=Rufina:wght@400;700&display=swap"
-      rel="stylesheet"
-    >
-    <link
-      rel="icon"
-      href="/src/assets/images/icons/logo.svg"
-      type="image/svg+xml"
-    />
-    <script type="module" src="/src/styles/main.css"></script>
+    {{> head }}
+    <script
+      type="module"
+      src="/src/js/main.js"
+    ></script>
   </head>
-
   <body>
-    <header>
-      <nav aria-label="Main navigation">
-        <a
-          href="/"
-          aria-label="FoodZero Home"
-        >
-          <svg
-            role="img"
-            aria-labelledby="logo-title"
-            width="118"
-            height="46"
-          >
-            <title id="logo-title">FoodZero Logo</title>
-            <use href="/src/assets/images/icons/sprite.svg#logo"></use>
-          </svg>
-        </a>
+     <a class="skip-link" href="#main">Skip to content</a>
+    <!-- ================= HEADER PARTIAL ================= -->
+    {{> header }}
 
-        <button
-          type="button"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-          aria-label="Open main menu"
-        >
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            width="24"
-            height="24"
-          >
-            <use href="/src/assets/images/icons/sprite.svg#menu"></use>
-          </svg>
-        </button>
+    <!-- ================= OVERLAY MENU PARTIAL ================= -->
+    {{> overlay-menu }}
 
-        <div>
-          <a
-            href="tel:+86852346000"
-            aria-label="Call us at +86 852 346 000"
-          >
-            <span aria-hidden="true">+86 852 346 000</span>
-          </a>
-          <button type="button">Reservations</button>
-        </div>
-      </nav>
-    </header>
-
+    <!-- ================= MAIN CONTENT ================= -->
     <main id="main-content">
       <!-- HERO SECTION -->
-      <section aria-labelledby="hero-heading">
-        <div>
-          <div>
-            <h1 id="hero-heading">
-              Healthy Eating <br />
-              is important <br />
+      <section
+        class="hero section-spacing"
+        aria-labelledby="hero-heading"
+      >
+        <div class="container hero__grid">
+
+          <div class="hero__content">
+            <h1
+              id="hero-heading"
+              class="hero__title text-h1 color-inverse"
+            >
+              <span class="sr-only">FoodZero — </span>
+              Healthy Eating <br aria-hidden="true" />
+              is important <br aria-hidden="true" />
               part of lifestyle
             </h1>
-            <p>
+            <p class="hero__desc subtitle">
               Discover the perfect balance of taste and nutrition. Fuel your body with wholesome
               ingredients and start your journey toward a more vibrant, energetic life today.
             </p>
           </div>
 
-          <div aria-hidden="true">
+          <a
+            class="scroll-indicator"
+            href="#after-hero"
+            aria-label="Scroll down"
+          >
             <span>Scroll</span>
-            <svg
-              focusable="false"
-              width="2"
-              height="150"
-            >
-              <use href="/src/assets/images/icons/sprite.svg#scroll-line"></use>
-            </svg>
-          </div>
+          </a>
 
-          <div>
-            <!-- Using figure here is correct as it pairs an image with potential caption context -->
-            <figure>
+          <div class="hero__visual">
+            <figure class="hero__main-wrapper">
               <img
                 src="/src/assets/images/content/hero-meat.jpg"
-                alt="Gourmet seared steak with rosemary"
+                onerror="this.src = 'https://placehold.co/792x932/4D4D4D/FFFFFF?text=Hero+Image'"
+                alt="Gourmet seared steak with rosemary on a white plate"
+                class="hero__main-img"
                 width="792"
-                height="auto"
+                height="931"
                 loading="eager"
-              />
+                decoding="async"
+                fetchpriority="high"
+              >
+              <figcaption class="sr-only">Signature dish of the restaurant</figcaption>
             </figure>
 
-            <ul aria-label="Featured spices">
+            <ul
+              class="hero__spices"
+              aria-label="Featured spices"
+            >
               <li>
                 <img
                   src="/src/assets/images/content/kurkuma.png"
+                  onerror="this.src = 'https://placehold.co/240x240/9CAA00/FFFFFF?text=Spice'"
                   alt="Fresh Kurkuma spice"
-                  width="255"
+                  width="240"
+                  height="240"
+                  class="hero__spice"
                   loading="lazy"
                 />
               </li>
               <li>
                 <img
                   src="/src/assets/images/content/mustard.png"
+                  onerror="this.src = 'https://placehold.co/240x240/5E6600/FFFFFF?text=Spice'"
                   alt="Mustard seeds"
-                  width="255"
+                  width="240"
+                  height="240"
+                  class="hero__spice"
                   loading="lazy"
                 />
               </li>
               <li>
                 <img
                   src="/src/assets/images/content/muskat.png"
+                  onerror="this.src = 'https://placehold.co/240x240/233000/FFFFFF?text=Spice'"
                   alt="Muskat nut"
-                  width="255"
+                  width="240"
+                  height="240"
+                  class="hero__spice"
                   loading="lazy"
                 />
               </li>
             </ul>
           </div>
+
         </div>
       </section>
 
+      <div
+        id="after-hero"
+        class="sr-only"
+        aria-hidden="true"
+      ></div>
+
       <!-- DIET SECTION -->
-      <section aria-labelledby="diet-heading">
-        <div>
-          <div>
+      <section
+        class="diet section-spacing"
+        aria-labelledby="diet-heading"
+      >
+        <div class="container">
+          <h2 class="sr-only">Diet</h2>
+          <div class="diet__row">
             <figure>
               <img
                 src="/src/assets/images/content/plan-soup.jpg"
+                onerror="this.src = 'https://placehold.co/800x600/EBF0E4/4D4D4D?text=Soup'"
                 alt="Creamy clam chowder with fresh seafood and vegetables in a minimalist white bowl."
                 width="792"
                 loading="lazy"
               />
             </figure>
-            <div>
-              <h2 id="diet-heading">
+            <div class="diet__content">
+              <h3
+                id="diet-heading"
+                class="text-h3 color-inverse"
+              >
                 Start to plan <br />
                 your diet today
-              </h2>
-              <p>
+              </h3>
+              <p class="subtitle">
                 Discover the art of balanced nutrition with chef-curated recipes that prioritize
                 fresh ingredients.
               </p>
             </div>
           </div>
 
-          <div>
-            <div>
-              <p>
-                Elevate every meal with the fundamental essence of quality seasoning. From Himalayan
-                salts to peppercorns.
-              </p>
-            </div>
+          <div class="diet__row diet__row--reverse">
             <figure>
               <img
                 src="/src/assets/images/content/plan-spices.jpg"
+                onerror="this.src = 'https://placehold.co/600x800/EBF0E4/4D4D4D?text=Spices'"
                 alt="Clear salt and pepper mills with pink salt and black peppercorns on a neutral fabric background."
                 width="508"
                 loading="lazy"
               />
             </figure>
+            <div class="diet__content">
+              <p class="subtitle">
+                Elevate every meal with the fundamental essence of quality seasoning. From Himalayan salts to robust peppercorns, spices do more than enhance flavor—they unlock the nutritional potential of your food. Fuel your body with our premium, all-natural ingredients that make healthy eating a delicious daily ritual.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- MENU SECTION -->
-      <section aria-labelledby="menu-heading">
-        <div>
-          <div>
-            <h2 id="menu-heading">Our Menu</h2>
-            <p>
+      <section
+        class="menu section-spacing"
+        aria-labelledby="menu-heading"
+      >
+        <div class="container">
+          <header class="section-header menu__header">
+            <h2
+              id="menu-heading"
+              class='text-h2 color-primary'
+            >Our Menu</h2>
+            <p class='subtitle'>
               Explore our selection of dishes crafted with organic, locally sourced ingredients for
               a mindful dining experience.
             </p>
-          </div>
-          <!-- menu decor -->
-          <img
-            src="/src/assets/images/content/menu-decor.png"
-            alt=""
-            aria-hidden="true"
-            width="879"
-            loading="lazy"
-          />
+          </header>
 
-          <ul>
-            <li>
-              <data value="20.00">$20</data>
-              <svg
-                aria-hidden="true"
-                width="792"
-                height="4"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#menu-line"></use>
-              </svg>
-              <h3>Deep Sea Snow White Cod Fillet</h3>
-              <p>
-                Pan-seared Atlantic cod served with steamed asparagus and a light lemon-caper
-                reduction.
-              </p>
-            </li>
-            <li>
-              <data value="22.00">$22</data>
-              <svg
-                aria-hidden="true"
-                width="792"
-                height="4"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#menu-line"></use>
-              </svg>
-              <h3>Steak With Rosemary Butter</h3>
-              <p>
-                Prime grass-fed beef topped with aromatic rosemary compound butter and roasted root
-                vegetables.
-              </p>
-            </li>
-            <li>
-              <data value="18.00">$18</data>
-              <svg
-                aria-hidden="true"
-                width="792"
-                height="4"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#menu-line"></use>
-              </svg>
-              <h3>Cucumber Salad</h3>
-              <p>
-                Crisp organic cucumbers tossed with fresh dill, mint, and a tangy Greek yogurt
-                dressing.
-              </p>
-            </li>
-            <li>
-              <data value="90.00">$90</data>
-              <svg
-                aria-hidden="true"
-                width="792"
-                height="4"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#menu-line"></use>
-              </svg>
-              <h3>Natural Wine Pairing</h3>
-              <p>
-                A curated selection of biodynamic wines chosen to complement the natural flavors of
-                our seasonal menu.
-              </p>
-            </li>
-          </ul>
+        {{> menu }}
         </div>
+        <img 
+  src="/src/assets/images/content/plant.png" 
+  alt="" 
+  class="menu__decor" 
+  width="879" 
+  height="946" 
+  aria-hidden="true" 
+  loading="lazy" 
+/>
       </section>
 
       <!-- CHEF SECTION -->
-      <section aria-labelledby="chef-heading">
-        <div>
-          <div>
-            <svg
-              aria-hidden="true"
-              width="365"
-            >
-              <use href="/src/assets/images/icons/sprite.svg#leaf-left"></use>
-            </svg>
-            <figure>
+      <section
+        class="chef-section"
+        aria-labelledby="chef-heading"
+      >
+        <div class="container grid chef__grid">
+           <div class="chef__visuals">
+           {{> vector-leaf--left}}
+
+            <figure class="chef__img-primary">
               <img
-                src="/src/assets/images/content/chef-cooking.png"
+                src="/src/assets/images/content/cook-chef.png"
+                onerror="this.src = 'https://placehold.co/950x800/EBF0E4/4D4D4D?text=Chef'"
                 alt="Chef actively preparing fresh ingredients"
-                width="952"
+                width="935"
                 loading="lazy"
               />
             </figure>
-            <figure>
+
+            <figure class="chef__img-secondary">
               <img
                 src="/src/assets/images/content/brown-wooden-round-plate-with-food.png"
+                onerror="this.src = 'https://placehold.co/460x460/EBF0E4/4D4D4D?text=Dish'"
                 alt="Plated salmon dish on a brown wooden round plate"
                 width="460"
                 loading="lazy"
               />
             </figure>
           </div>
-          <div>
-            <h2 id="chef-heading">Excellent cook</h2>
-            <p>
+
+          <div class="chef__content section-header">
+            <h2 id="chef-heading" class="chef__content--title text-h2 color-primary">Excellent cook</h2>
+            <p class="subtitle">
               Our lead chef brings over 15 years of culinary expertise, transforming simple
               ingredients into extraordinary masterpieces.
             </p>
-            <svg
-              aria-hidden="true"
-              width="456"
-            >
-              <use href="/src/assets/images/icons/sprite.svg#leaf-right"></use>
-            </svg>
+             {{> vector-leaf--right}}
           </div>
+
         </div>
       </section>
 
-      <!-- CORE VALUES SECTION -->
-      <section aria-label="Our core values">
-        <ul>
-          <li>
-            <svg
-              width="184"
-              height="184"
+      <!-- CORE VALUES (FEATURES) SECTION -->
+      <section
+        class="features section-spacing"
+        aria-labelledby="features-heading"
+      >
+        <h2
+          id="features-heading"
+          class="sr-only"
+        >Our core values</h2>
+        <ul class="container features__grid">
+          <li class="features__item">
+            <div
+              class="features__icon"
               aria-hidden="true"
             >
-              <use href="/src/assets/images/icons/sprite.svg#fish"></use>
-            </svg>
-            <h3>Premium Quality</h3>
-            <p>
+              <svg class="icon">
+                <use href="#icon-fish"></use>
+              </svg>
+            </div>
+            <h3 class="features__title text-h4 color-primary">Premium Quality</h3>
+            <p class="features__desc">
               We partner exclusively with local farms and ethical suppliers to ensure every
               ingredient meets our gold standard.
             </p>
           </li>
-          <li>
-            <svg
-              width="184"
-              height="184"
+          <li class="features__item">
+            <div
+              class="features__icon"
               aria-hidden="true"
             >
-              <use href="/src/assets/images/icons/sprite.svg#carrot"></use>
-            </svg>
-            <h3>Seasonal Vegetables</h3>
-            <p>
+              <svg class="icon">
+                <use href="#icon-carrot"></use>
+              </svg>
+            </div>
+            <h3 class="features__title text-h4 color-primary">Seasonal Vegetables</h3>
+            <p class="features__desc">
               Harvested at the peak of ripeness, our vegetables provide the essential vitamins and
               minerals your body craves.
             </p>
           </li>
-          <li>
-            <svg
-              width="184"
-              height="184"
+          <li class="features__item">
+            <div
+              class="features__icon"
               aria-hidden="true"
             >
-              <use href="/src/assets/images/icons/sprite.svg#fruit"></use>
-            </svg>
-            <h3>Fresh Fruit</h3>
-            <p>
+              <svg class="icon">
+                <use href="#icon-lemon"></use>
+              </svg>
+            </div>
+            <h3 class="features__title text-h4 color-primary">Fresh Fruit</h3>
+            <p class="features__desc">
               Sustainably grown fruits picked at the height of their season to provide natural
               sweetness and vital antioxidants.
             </p>
           </li>
         </ul>
       </section>
+
       <!-- BLOG SECTION -->
-      <section aria-labelledby="blog-heading">
-        <div>
+      <section
+        class="blog section-spacing"
+        aria-labelledby="blog-heading"
+      >
+        <div class="container">
           <h2
             id="blog-heading"
             class="sr-only"
           >Latest from our blog</h2>
 
-          <ul aria-label="Blog posts">
+          <ul
+            class="grid blog__grid"
+            aria-label="Blog posts"
+          >
             <li>
-              <article aria-labelledby="post-1-heading">
-                <img
-                  src="/src/assets/images/content/post-1.jpg"
-                  alt="Colorful fresh fruit and vegetables"
-                  loading="lazy"
-                  width="792"
-                />
+              <article
+                class="blog-card"
+                aria-labelledby="post-1-heading"
+              >
+                <div class="blog-card__img-wrapper">
+                  <img
+                    src="/src/assets/images/content/post-1.jpg"
+                    onerror="this.src = 'https://placehold.co/800x600/EBF0E4/4D4D4D?text=Blog+Post'"
+                    alt="Colorful fresh fruit and vegetables"
+                    class="blog-card__img"
+                    loading="lazy"
+                    width="792"
+                  />
+                  <span class="blog-card__tag">Fashion</span>
+                </div>
 
-                <p><strong class="sr-only">Category:</strong> Fashion</p>
-
-                <header>
+                <div class="blog-card__meta">
                   <img
                     src="/src/assets/images/content/avatar-julie.png"
+                    onerror="this.src = 'https://placehold.co/60x60/9CAA00/FFFFFF?text=JC'"
                     alt="Julie Christie"
+                    class="blog-card__avatar"
                     width="60"
                   />
-                  <ul aria-label="Post metadata">
+                  <ul
+                    class="blog-card__meta-details"
+                    aria-label="Post metadata"
+                  >
                     <li>
                       <address>Julie Christie</address>
                     </li>
-                    <!-- In HTML5, when an <address> tag is placed inside an <article>, it specifically represents the author or contact information for that particular article. Even if it's just the author's name, it provides great semantic value for screen readers and search engines to know "this person wrote this post." -->
+                    <li aria-hidden="true">&bull;</li>
                     <li><time datetime="2021-10-17">October 17, 2021</time></li>
-                    <li><time datetime="15:33">3:33pm</time></li>
+                    <li aria-hidden="true">&bull;</li>
+                    <li><time datetime="15:33">3:33 pm</time></li>
+                    <li aria-hidden="true">&bull;</li>
                     <li>2 comments</li>
                   </ul>
-                </header>
+                </div>
 
-                <h3 id="post-1-heading">
-                  <a href="#">Fruit and vegetables and protection against diseases</a>
-                </h3>
-                <svg
-                  aria-hidden="true"
-                  width="645"
-                  height="4"
+                <h3
+                  id="post-1-heading"
+                  class="text-h4 color-primary blog-card__title"
                 >
-                  <use href="/src/assets/images/icons/sprite.svg#menu-line"></use>
-                </svg>
-                <p>
+                  <a href="/single-post.html">Fruit and vegetables and protection against diseases</a>
+                </h3>
+                <p class="blog-card__excerpt">
                   Discover the powerful benefits of incorporating a colorful variety of fruits and
                   vegetables into your daily diet. We explore the latest nutritional science on how
-                  these natural whole foods can boost your immune system and provide essential
-                  vitamins to help protect your body against common diseases.
+                  these natural whole foods can boost your immune system.
                 </p>
-
                 <a
-                  href="."
-                  aria-label="Read more about Fruit and vegetables and protection against diseases"
-                >
-                  Read More <span aria-hidden="true">&rarr;</span>
-                </a>
-              </article>
+                  href="/single-post.html"
+                  class="blog-card__link"
+                  aria-label="Read more about Asparagus Spring Salad"
+                >Read More <svg aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg></a>
             </li>
+
             <li>
-              <article aria-labelledby="post-2-heading">
-                <img
-                  src="/src/assets/images/content/post-2.jpg"
-                  alt="Asparagus in wooden plate"
-                  loading="lazy"
-                  width="792"
-                />
+              <article
+                class="blog-card"
+                aria-labelledby="post-2-heading"
+              >
+                <div class="blog-card__img-wrapper">
+                  <img
+                    src="/src/assets/images/content/post-2.jpg"
+                    onerror="this.src = 'https://placehold.co/800x600/EBF0E4/4D4D4D?text=Blog+Post'"
+                    alt="Asparagus in wooden plate"
+                    class="blog-card__img"
+                    loading="lazy"
+                    width="792"
+                  />
+                  <span class="blog-card__tag">Fashion</span>
+                </div>
 
-                <p><strong class="sr-only">Category:</strong> Fashion</p>
-
-                <header>
+                <div class="blog-card__meta">
                   <img
                     src="/src/assets/images/content/avatar-dianne.png"
+                    onerror="this.src = 'https://placehold.co/60x60/9CAA00/FFFFFF?text=DR'"
                     alt="Dianne Russell"
+                    class="blog-card__avatar"
                     width="60"
                   />
-                  <ul aria-label="Post metadata">
+                  <ul
+                    class="blog-card__meta-details"
+                    aria-label="Post metadata"
+                  >
                     <li>
                       <address>Dianne Russell</address>
                     </li>
+                    <li aria-hidden="true">&bull;</li>
                     <li><time datetime="2021-10-17">October 17, 2021</time></li>
-                    <li><time datetime="15:33">3:33pm</time></li>
+                    <li aria-hidden="true">&bull;</li>
+                    <li><time datetime="15:33">3:33 pm</time></li>
+                    <li aria-hidden="true">&bull;</li>
                     <li>2 comments</li>
                   </ul>
-                </header>
+                </div>
 
-                <h3 id="post-2-heading">
-                  <a href="#">Asparagus Spring Salad with Rocket, Goat's Cheese</a>
-                </h3>
-                <svg
-                  aria-hidden="true"
-                  width="645"
-                  height="4"
+                <h3
+                  id="post-2-heading"
+                  class="text-h4 color-primary blog-card__title"
                 >
-                  <use href="/src/assets/images/icons/sprite.svg#menu-line"></use>
-                </svg>
-                <p>
+                  <a href="/single-post.html">Asparagus Spring Salad with Rocket, Goat's Cheese</a>
+                </h3>
+                <p class="blog-card__excerpt">
                   Welcome the fresh flavors of spring with this light and vibrant salad. Crisp
                   asparagus pairs perfectly with peppery rocket leaves, while crumbled goat's cheese
-                  adds a rich, creamy texture. It's an elegant yet simple dish that is perfect for a
-                  quick weekday lunch or a weekend dinner party starter.
+                  adds a rich, creamy texture.
                 </p>
-
                 <a
-                  href="."
-                  aria-label="Read more about Asparagus Spring Salad with Rocket, Goat's Cheese"
-                >
-                  Read More <span aria-hidden="true">&rarr;</span>
-                </a>
+                  href="/single-post.html"
+                  class="blog-card__link"
+                  aria-label="Read more about Asparagus Spring Salad"
+                >Read More <svg aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg></a>
               </article>
             </li>
           </ul>
         </div>
       </section>
-      <!-- RESERVATION -->
-      <section aria-labelledby="reservation-heading">
-        <header class="header-section">
-          <h1
-            id="reservation-heading"
-            class="main-title"
-          >Make a Reservation</h1>
-          <p class="subtitle">Get in touch with restaurant</p>
-        </header>
 
-        <form
-          action="."
-          method="POST"
-        >
-          <fieldset>
-            <legend class="sr-only">Details of reservation</legend>
-            <div class="form-grid">
-              <!-- date -->
-              <div class="input-group">
-                <label
-                  for="reservation-date"
-                  class="sr-only"
-                >Date of reservation</label>
-                <input
-                  type="date"
-                  id="reservation-date"
-                  name="date"
-                  value="2021-06-22"
-                  required
-                  aria-required="true"
-                  class="form-control"
-                />
-                <svg
-                  class="input-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-width="1.5"
-                  aria-hidden="true"
-                >
-                  <use href="/src/assets/images/icons/sprite.svg#angle-down"></use>
-                </svg>
-              </div>
+      <!-- RESERVATION SECTION -->
+      {{> reservation }}
 
-              <!-- time -->
-              <div class="input-group">
-                <label
-                  for="reservation-time"
-                  class="sr-only"
-                >Time of reservation</label>
-                <input
-                  type="time"
-                  id="reservation-time"
-                  name="time"
-                  value="18:00"
-                  step="1800"
-                  required
-                  aria-required="true"
-                  class="form-control"
-                />
-                <svg
-                  class="input-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-width="1.5"
-                  aria-hidden="true"
-                >
-                  <use href="/src/assets/images/icons/sprite.svg#angle-down"></use>
-                </svg>
-              </div>
+      <!-- CATEGORIES SECTION -->
+      <section
+        class="categories section-spacing"
+        aria-labelledby="categories-heading"
+      >
+        <div class="container">
+          <header class="section-header categories__header">
+            <h2
+              id="categories-heading"
+              class="text-h2 color-primary"
+            >
+              Calories Energy <br />
+              Balance
+            </h2>
+            <p  class='subtitle'>
+              Find the perfect nutritional balance for your body. Browse our categories to discover
+              dishes that satisfy your cravings and provide lasting energy.
+            </p>
+          </header>
 
-              <!-- persons -->
-              <div class="input-group">
-                <label
-                  for="reservation-party"
-                  class="sr-only"
-                >Number of person</label>
-                <select
-                  id="reservation-party"
-                  name="party_size"
-                  required
-                  aria-required="true"
-                  class="form-control"
-                >
-                  <option value="1">1 Person</option>
-                  <option
-                    value="2"
-                    selected
-                  >2 Person</option>
-                  <option value="3">3 Person</option>
-                  <option value="4">4 Person</option>
-                  <option value="6">6 Person</option>
-                </select>
-                <svg
-                  class="input-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-width="1.5"
-                  aria-hidden="true"
-                >
-                  <use href="/src/assets/images/icons/sprite.svg#angle-down"></use>
-                </svg>
-              </div>
-            </div>
-          </fieldset>
-
-          <button
-            type="submit"
-            class="btn-submit"
-          >Book Now</button>
-        </form>
-      </section>
-
-      <!-- CALORIES ENERGY BALANCE (Categories) -->
-      <section aria-labelledby="categories-heading">
-        <div>
-          <h2 id="categories-heading">Calories Energy Balance</h2>
-          <p>
-            We believe that healthy eating doesn't mean compromising on taste. Our menu is carefully
-            curated to offer a perfect balance of essential nutrients and bold flavors. Explore our
-            categories to find dishes designed to fuel your body and satisfy your cravings, whether
-            you're looking for a light starter or a hearty main course.
-          </p>
-
-          <ul aria-label="Menu categories">
+          <ul
+            class="grid categories__grid"
+            aria-label="Menu categories"
+          >
             <li>
               <a
-                href="."
+                href="/menu.html"
+                class="category-card"
                 aria-labelledby="category-starters"
               >
-                <h3 id="category-starters">Starters</h3>
-                <svg
-                  aria-hidden="true"
-                  width="24"
-                  height="24"
-                >
-                  <use href="/src/assets/images/icons/sprite.svg#arrow-right"></use>
-                </svg>
                 <img
                   src="/src/assets/images/content/starters.jpg"
+                  onerror="this.src = 'https://placehold.co/600x800/EBF0E4/4D4D4D?text=Starters'"
                   alt="Plated starters with fresh herbs"
                   loading="lazy"
                   width="508"
                 />
+                <h3
+                  id="category-starters"
+                  class="category-card__title text-h4"
+                >
+                  Starters
+                  <svg
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                  >
+                    <use href="#icon-arrow-right"></use>
+                  </svg>
+                </h3>
               </a>
             </li>
             <li>
               <a
-                href="."
+                href="/menu.html"
+                class="category-card"
                 aria-labelledby="category-mains"
               >
-                <h3 id="category-mains">Mains</h3>
-                <svg
-                  aria-hidden="true"
-                  width="24"
-                  height="24"
-                >
-                  <use href="/src/assets/images/icons/sprite.svg#arrow-right"></use>
-                </svg>
                 <img
                   src="/src/assets/images/content/mains.jpg"
+                  onerror="this.src = 'https://placehold.co/600x800/EBF0E4/4D4D4D?text=Mains'"
                   alt="Roasted meat main course with vegetables"
                   loading="lazy"
                   width="508"
                 />
+                <h3
+                  id="category-mains"
+                  class="category-card__title text-h4"
+                >
+                  Mains
+                  <svg
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                  >
+                    <use href="#icon-arrow-right"></use>
+                  </svg>
+                </h3>
               </a>
             </li>
             <li>
               <a
-                href="."
+                href="/menu.html"
+                class="category-card"
                 aria-labelledby="category-soups"
               >
-                <h3 id="category-soups">Soups</h3>
-                <svg
-                  aria-hidden="true"
-                  width="24"
-                  height="24"
-                >
-                  <use href="/src/assets/images/icons/sprite.svg#arrow-right"></use>
-                </svg>
                 <img
                   src="/src/assets/images/content/cream-soups.jpg"
+                  onerror="this.src = 'https://placehold.co/600x800/EBF0E4/4D4D4D?text=Soups'"
                   alt="Bowl of creamy soup garnished with herbs"
                   loading="lazy"
                   width="508"
                 />
+                <h3
+                  id="category-soups"
+                  class="category-card__title text-h4"
+                >
+                  Soups
+                  <svg
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                  >
+                    <use href="#icon-arrow-right"></use>
+                  </svg>
+                </h3>
               </a>
             </li>
           </ul>
@@ -688,185 +551,80 @@
       </section>
 
       <!-- TESTIMONIAL SECTION -->
-      <section aria-label="Customer Testimonial">
-        <div>
-          <figure>
-            <blockquote>
-              <p>
-                "The culinary experience at Food Zero exceeded all my expectations. Every dish is a
-                masterful blend of flavor and presentation. The ambiance is perfect for both casual
-                dining and special occasions. Highly recommended!
-              </p>
-            </blockquote>
-
-            <!-- Decorative quote icon -->
+      <section
+        class="testimonial section-spacing"
+        aria-label="Customer Testimonial"
+      >
+        <div class="container">
+          <figure class="testimonial__figure">
+            <!-- DECOR BLOCKQUOTE -->
             <svg
+              class="testimonial__decor"
               aria-hidden="true"
-              width="282"
-              height="234"
             >
-              <use href="/src/assets/images/icons/sprite.svg#quote-marks"></use>
+              <use href="#icon-quote-marks"></use>
             </svg>
+            <!-- BLOCKQUOTE -->
+            <blockquote class="testimonial__quote">
+              "The culinary experience at Food Zero exceeded all my expectations. Every dish is a
+              masterful blend of flavor and presentation. The ambiance is perfect for both casual
+              dining and special occasions. Highly recommended!
+            </blockquote>
+            <!-- TESTIMONIAL FOOTER -->
+            <div class="testimonial__footer">
 
-            <figcaption>
-              <img
-                src="/src/assets/images/content/avatar-john.png"
-                alt="John Doe"
-                loading="lazy"
-                width="170"
-                height="170"
-              />
-              <div>
-                <cite>John Doe</cite>
-                <p>Blogger</p>
-              </div>
-            </figcaption>
+              <figcaption class="testimonial__author">
+                <img
+                  src="/src/assets/images/content/avatar-john.png"
+                  onerror="this.src = 'https://placehold.co/170x170/B0B0B0/FFFFFF?text=JD'"
+                  alt="John Doe"
+                  loading="lazy"
+                  width="170"
+                  height="170"
+                  class="testimonial__avatar"
+                />
+                <div class="testimonial__author-info">
+                  <cite class="testimonial__name">John Doe</cite>
+                  <p class="testimonial__role">Blogger</p>
+                </div>
+              </figcaption>
+
+
+              <nav
+                class="testimonial__nav"
+                aria-label="Testimonial pagination"
+              >
+                <button
+                  type="button"
+                  class="testimonial__btn"
+                  aria-label="Previous testimonial"
+                >
+                  <svg aria-hidden="true">
+                    <use href="#icon-arrow-left"></use>
+                  </svg>
+                </button>
+                <span
+                  class="testimonial__counter"
+                  aria-live="polite"
+                >2 / 3</span>
+                <button
+                  type="button"
+                  class="testimonial__btn"
+                  aria-label="Next testimonial"
+                >
+                  <svg aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg>
+                </button>
+              </nav>
+
+            </div>
           </figure>
-
-          <nav aria-label="Testimonial pagination">
-            <button
-              type="button"
-              aria-label="Previous testimonial"
-            >
-              <svg
-                aria-hidden="true"
-                width="48"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#arrow-left"></use>
-              </svg>
-            </button>
-            <span aria-live="polite">2 / 3</span>
-            <button
-              type="button"
-              aria-label="Next testimonial"
-            >
-              <svg
-                aria-hidden="true"
-                width="48"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#arrow-right"></use>
-              </svg>
-            </button>
-          </nav>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER SECTION -->
-    <footer>
-      <div>
-        <!-- Brand -->
-        <div>
-          <a
-            href="."
-            aria-label="FoodZero Home"
-          >
-            Food <br />
-            Zero.
-          </a>
-        </div>
-
-        <!-- Contact Info using <address> -->
-        <address aria-label="Contact Information">
-          <p><strong>Contact</strong></p>
-          <ul>
-            <li><a href="tel:+186852346000">+1+86 852 346 000</a></li>
-            <li><a href="mailto:info@foodzero.com">info@foodzero.com</a></li>
-          </ul>
-          <p>
-            1959 Sepulveda Blvd.<br />
-            Culver City, CA, 90230
-          </p>
-        </address>
-
-        <!-- Newsletter Subscription -->
-        <div>
-          <form
-            action="/"
-            method="POST"
-            aria-labelledby="newsletter-heading"
-          >
-            <h2 id="newsletter-heading">Never Miss a Recipe</h2>
-
-            <div>
-              <label
-                for="newsletter-email"
-                class="sr-only"
-              >Email Address</label>
-              <input
-                type="email"
-                id="newsletter-email"
-                name="email"
-                placeholder="Email Address"
-                required
-              />
-              <button type="submit">Subscribe</button>
-            </div>
-
-            <b>Join our subscribers and get best recipe delivered each week.</b>
-          </form>
-        </div>
-      </div>
-
-      <!-- Footer Bottom -->
-      <div>
-        <p>&copy; 2020 Zero Inc. All rights Reserved</p>
-
-        <ul aria-label="Social media links">
-          <li>
-            <a
-              href="#"
-              aria-label="Follow us on Instagram"
-            >
-              <svg
-                aria-hidden="true"
-                width="28"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#instagram"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              aria-label="Follow us on Twitter"
-            >
-              <svg
-                aria-hidden="true"
-                width="28"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#twitter"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              aria-label="Follow us on Facebook"
-            >
-              <svg
-                aria-hidden="true"
-                width="28"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#facebook"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              aria-label="Subscribe to our YouTube channel"
-            >
-              <svg
-                aria-hidden="true"
-                width="28"
-              >
-                <use href="/src/assets/images/icons/sprite.svg#youtube"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+    <!-- ================= FOOTER PARTIAL ================= -->
+    {{> footer }}
   </body>
 </html>
