@@ -1,0 +1,29 @@
+.menu__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-lg);
+}
+
+.menu__item {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: var(--sp-s);
+}
+
+.menu__item-title,
+.menu__item-price {
+  inline-size: 100%;
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  line-height: 1.23529;
+  color: var(--c-text-black);
+}
+
+.menu__item-price {
+  inline-size: 100%;
+  font-size: var(--fs-h4);
+  line-height: 1.33333;
+  text-align: right;
+  border-block-end: 0.25rem dashed var(--c-text-black);
+}
