@@ -1,0 +1,25 @@
+<header class="header {{modifier}}">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      
+      <div class="nav__brand">
+        <a href="/" class="nav__logo" aria-label="FoodZero Home">
+          {{> logo }}
+        </a>
+        <button class="nav__toggle" id="menu-open-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="nav__toggle-icon" aria-hidden="true">
+            <use href="#icon-menu"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="nav__controls">
+        <a href="tel:+86852346000" class="nav__phone" aria-label="Call us">+86 852 346 000</a>
+        <a href="#reservations" class="btn">Reservations</a>
+      </div>
+      
+    </nav>
+  </div>
+</header>
+
+{{> overlay-menu }}

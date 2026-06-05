@@ -1,0 +1,121 @@
+.header {
+  background-color: var(--c-brand-dark);
+  color: var(--c-bg-white);
+  padding-block: var(--sp-sm);
+  position: sticky;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  z-index: 100;
+}
+
+.header--transparent {
+  background-color: transparent;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-sm);
+  inline-size: 100%;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  color: var(--c-bg-white);
+  text-decoration: none;
+}
+
+.nav__logo:hover,
+.nav__logo:focus-visible {
+  color: var(--c-brand-light); 
+}
+
+.logo-svg {
+ inline-size: clamp(6.25rem, calc(6.25rem + 12.9375 * var(--vw-range)), 19.1875rem);
+ max-inline-size: 100%;
+ block-size: auto; 
+}
+
+.nav__toggle {
+  color: var(--c-text-primary);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-start: -0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.nav__toggle-icon {
+  inline-size: clamp(2rem, calc(2rem + 3.875 * var(--vw-range)), 5.875rem);
+  aspect-ratio: 94 / 71;
+  block-size: auto;
+}
+
+.nav__toggle:hover .nav__toggle-icon,
+.nav__toggle:focus-visible .nav__toggle-icon {
+  color: var(--c-brand-light);
+}
+
+.nav__controls {
+  display: none;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+.nav__phone {
+  font-weight: 700;
+  color: var(--c-text-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+  white-space: nowrap;
+  display: none;
+}
+
+.nav__phone:hover,
+.nav__phone:focus-visible {
+  color: var(--c-brand-light);
+}
+
+
+@media (min-width: 48rem) {
+  .nav__brand {
+    gap: var(--sp-md);
+    justify-content: start;
+  }
+
+  .nav__controls {
+    display: flex;
+  }
+
+
+  .overlay-menu__body {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .overlay-menu__contact {
+    border-block-start: none;
+    padding-block-start: 0;
+    padding-inline-start: var(--sp-xl);
+  }
+}
+
+
+@media (min-width: 64rem) {
+  .nav__phone {
+    display: block;
+  }
+}
