@@ -8,16 +8,26 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 body {
+  text-rendering:optimizeLegibility;
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   color: var(--c-text-dark-grey);
   background-color: var(--c-bg-white);
   line-height: 1.6;
   overflow-inline: hidden;
+  transition: background-color 240ms ease, color 240ms ease;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -50,11 +60,11 @@ img {
   object-fit: cover;
 }
 
-img:not([src$=".svg"]) {
+img:not([src$='.svg']) {
   background-color: var(--c-text-light-grey);
 }
 
-img[src$=".svg"] {
+img[src$='.svg'] {
   background-color: transparent;
 }
 
@@ -62,9 +72,10 @@ ul,
 ol {
   list-style: none;
 }
-button,
+
+:where(button,
 input,
-select {
+select) {
   font-family: inherit;
   font-size: inherit;
   border: none;
@@ -76,15 +87,18 @@ button {
   cursor: pointer;
 }
 
+:where(a,button,input){outline:none}
+
+:where(a, button, input):focus-visible {
+  outline: 2px dashed var(--c-brand-light);
+  outline-offset: 4px;
+}
+
 fieldset {
   border: none;
   padding: 0;
   margin: 0;
   min-inline-size: 0;
-}
-:focus-visible {
-  outline: 2px solid var(--c-brand-dark);
-  outline-offset: 4px;
 }
 
 .sr-only {
@@ -96,4 +110,13 @@ fieldset {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
 }

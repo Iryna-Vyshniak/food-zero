@@ -1,0 +1,22 @@
+/* =========================================
+   LAYOUT UTILITIES & CONTAINERS
+   ========================================= */
+   
+/* Кожна основна секція стає незалежним контейнером */
+header,
+section,
+footer {
+  container-type: inline-size;
+}
+
+.container {
+  inline-size: 100%;
+  max-inline-size: var(--grid-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
