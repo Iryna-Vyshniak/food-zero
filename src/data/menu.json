@@ -1,0 +1,75 @@
+{
+  "homeMenu": [
+    {
+      "title": "Deep Sea Snow White Cod Fillet",
+      "description": "Pan-seared Atlantic cod served with gently steamed asparagus and a light, citrusy lemon-caper reduction.",
+      "price": 20
+    },
+    {
+      "title": "Steak With Rosemary Butter",
+      "description": "Prime grass-fed beef cooked to perfection, topped with aromatic rosemary compound butter and root vegetables.",
+      "price": 22
+    },
+    {
+      "title": "Cucumber Salad",
+      "description": "Crisp organic cucumbers tossed with fresh dill, mint, and a tangy, light Greek yogurt dressing.",
+      "price": 18
+    },
+    {
+      "title": "Natural Wine Pairing",
+      "description": "An exclusive tasting flight of biodynamic and organic wines produced with minimal intervention.",
+      "price": 90
+    }
+  ],
+  "starters": [
+    {
+      "title": "Grilled Okra and Tomatoes",
+      "description": "Freshly grilled organic okra served with farm-raised cherry tomatoes, lightly drizzled with extra virgin olive oil.",
+      "price": 20
+    },
+    {
+      "title": "Cucumber Salad",
+      "description": "Crisp organic cucumbers tossed with fresh dill, mint, and a tangy, light Greek yogurt dressing.",
+      "price": 18
+    },
+    {
+      "title": "Basil Pancakes",
+      "description": "Savory pancakes infused with fresh basil, served with a side of whipped cream cheese and sun-dried tomatoes.",
+      "price": 12
+    }
+  ],
+  "mains": [
+    {
+      "title": "Deep Sea Snow White Cod Fillet",
+      "description": "Pan-seared Atlantic cod served with gently steamed asparagus and a light, citrusy lemon-caper reduction.",
+      "price": 20
+    },
+    {
+      "title": "Steak With Rosemary Butter",
+      "description": "Prime grass-fed beef cooked to perfection, topped with aromatic rosemary compound butter and root vegetables.",
+      "price": 22
+    },
+    {
+      "title": "Steaks with Grilled Kimchi",
+      "description": "Flame-grilled flank steak paired with spicy, caramelized kimchi and a subtle drizzle of toasted sesame oil.",
+      "price": 20
+    }
+  ],
+  "pastries": [
+    {
+      "title": "Wine Pairing",
+      "description": "A sommelier-curated selection of premium wines chosen specifically to complement our current seasonal menu.",
+      "price": 158
+    },
+    {
+      "title": "Natural Wine Pairing",
+      "description": "An exclusive tasting flight of biodynamic and organic wines produced with minimal intervention.",
+      "price": 168
+    },
+    {
+      "title": "Whisky Flyer",
+      "description": "A tasting journey featuring three distinct single malt Scotch whiskies from the Highlands, Islay, and Speyside.",
+      "price": 90
+    }
+  ]
+}
