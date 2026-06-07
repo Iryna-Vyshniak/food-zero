@@ -67,6 +67,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         menu: resolve(__dirname, 'menu.html'),
+        about: resolve(__dirname, 'about.html'),
       },
       output: {
         // Налаштування імен файлів у папці dist для кращого кешування
