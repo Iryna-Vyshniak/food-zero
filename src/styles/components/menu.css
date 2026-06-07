@@ -1,7 +1,16 @@
 .menu__list {
+  gap: var(--sp-md);
+}
+
+.menu__list--grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--sp-lg);
+}
+
+.menu-list--stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .menu__item {
@@ -20,10 +29,24 @@
   color: var(--c-text-black);
 }
 
+.menu__item-desc {
+  font-weight: 400;
+  font-size: var(--fs-body-lg);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.menu__item-price-wrapper {
+  order: -1;
+  width: 100%;
+  text-align: right;
+  border-bottom: 2px dotted var(--c-text-black);
+  padding-block-end: 0.2rem;
+  margin-block-end: var(--sp-xs);
+}
+
 .menu__item-price {
-  inline-size: 100%;
   font-size: var(--fs-h4);
   line-height: 1.33333;
   text-align: right;
-  border-block-end: 0.25rem dashed var(--c-text-black);
 }

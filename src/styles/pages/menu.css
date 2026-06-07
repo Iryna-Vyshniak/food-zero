@@ -1,0 +1,178 @@
+.hero-menu {
+  position: relative;
+  min-block-size: 100dvh;
+  display: grid;
+  align-items: center;
+  padding-block: var(--sp-xl);
+
+  background-image: url('/src/assets/images/content/hero-bg-menu.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero__content-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-md);
+  z-index: 2;
+  position: relative;
+}
+
+.hero-menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-menu > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__title--menu {
+  inline-size: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero__title--menu {
+    max-inline-size: 50vi;
+  }
+}
+
+/* =========================================
+       4. MENU SECTION & CONTAINER QUERIES
+ ========================================= */
+.menu-section {
+  position: relative;
+  padding-block: var(--sp-xl);
+  container-type: inline-size;
+  container-name: menu-section;
+}
+
+.menu-section--starters::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0; /* Якщо декор має бути СПРАВА */
+
+  inline-size: clamp(300px, 25vi, 438px);
+  aspect-ratio: 516 / 438;
+
+  background-image: url('/src/assets/images/icons/vector-blueberry.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+  opacity: var(--opacity-decor, 0.8);
+  pointer-events: none;
+}
+
+.menu-section__header {
+  text-align: center;
+  margin-block-end: var(--sp-lg);
+  position: relative;
+  isolation: isolate;
+}
+/* decor */
+.menu-section__header-pastries::before {
+  content: '';
+  position: absolute;
+
+  inset-inline: 0;
+  margin-inline: auto;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+
+  inline-size: clamp(150px, 11vi, 348px);
+  aspect-ratio: 348 / 415;
+
+  background-image: url('/src/assets/images/icons/vector-avocado.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  z-index: -1;
+  opacity: var(--opacity-decor, 0.8);
+  pointer-events: none;
+}
+
+.menu-section__title {
+  margin-block-end: var(--sp-xs);
+}
+
+.menu-section__desc {
+  font-weight: 400;
+  font-size: var(--fs-body-lg);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.menu-section__decor--left {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  max-inline-size: clamp(300px, calc(160px + 17 * var(--vw-range)), 438px);
+  opacity: 0.8;
+  block-size: auto;
+  aspect-ratio: 516 / 438;
+
+  transform: rotate(360deg);
+}
+
+/* Layout Wrapper (Grid) */
+.menu-category {
+  display: grid;
+  gap: var(--sp-md);
+  grid-template-columns: 1fr; /* Mobile-first */
+}
+
+.menu-category__media {
+  aspect-ratio: 792 / 989;
+  inline-size: 100%;
+  overflow: hidden;
+}
+
+.menu-category__media img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.menu-category__media:hover img {
+  transform: scale(1.05);
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+  justify-content: center;
+}
+
+/* CONTAINER QUERY: Shift to 2 columns based on component width */
+@container menu-section (min-inline-size: 64rem) {
+  .menu-category {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--sp-md);
+  }
+
+  /* Alternate Layout: Even sections flip the image/text order.
+         The DOM order remains semantic, visual order changes. */
+  .menu-section--reverse .menu-list {
+    order: -1;
+  }
+  .menu-section--reverse .menu-category__media {
+    order: 1;
+  }
+}
