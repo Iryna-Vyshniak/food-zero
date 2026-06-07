@@ -1,74 +1,39 @@
 import { resolve } from 'path';
+import { readFileSync } from 'fs';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
-// =============================================
-// SEO DATA CONTEXT
-// {{> head }}
-// =============================================
+import homeData from './src/data/home.json';
+import menuData from './src/data/menu.json';
+
+
 const pageData = {
   '/index.html': {
     title: 'FoodZero | Home',
     description: 'Experience healthy, sustainable dining and organic recipes at FoodZero restaurant.',
+    homeMenu:  menuData.homeMenu
   },
   '/menu.html': {
     title: 'FoodZero | Our Menu',
     description: 'Explore our seasonal menu featuring Starters, Mains, and Pastries & Drinks made with fresh ingredients.',
+    menuData: menuData 
   },
-  '/about.html': {
-    title: 'FoodZero | Who We Are',
-    description: 'Learn about our story, zero-waste philosophy, meet our restaurant manager and executive chef.',
-  },
-  '/contact.html': {
-    title: 'FoodZero | Contact Us',
-    description: 'Get in touch with FoodZero. Find our location, opening hours, and make a reservation.',
-  },
-  '/portfolio.html': {
-    title: 'FoodZero | Portfolio',
-    description: 'Explore our culinary portfolio featuring our best dishes and drinks showcased in a masonry grid.',
-  },
-  '/blog-list.html': {
-    title: 'FoodZero | Blog',
-    description: 'Read our latest articles on healthy eating, organic recipes, and sustainable lifestyle.',
-  },
-  '/single-dish.html': {
-    title: 'FoodZero | Deep Sea Snow White Cod Fillet',
-    description: 'Discover our signature Deep Sea Snow White Cod Fillet. Melt in your mouth experience with the best taste.',
-  },
-  '/single-post.html': {
-    title: 'FoodZero | Blog Post',
-    description: 'Read detailed insights and stories about sustainable food and cooking techniques.',
-  },
-  '/healthy-lifestyle.html': {
-    title: 'FoodZero | Healthy Eating Lifestyle',
-    description: 'Start planning your organic diet today. Discover how a well-balanced diet is the cornerstone of a vibrant life.',
-  },
-  '/coming-soon.html': {
-    title: 'FoodZero | Coming Soon',
-    description: 'Our new menu and features are launching soon. Stay tuned for updates.',
-  }
 };
 
 export default defineConfig({
-  // Коренева директорія проєкту
   root: './', 
-  
-  // Базовий шлях для деплою (якщо сайт не в корені домену)
   base: '/',
 
   /* =========================================
      PLUGINS CONFIGURATION
      ========================================= */
   plugins: [
-    // Налаштування Handlebars для partials та змінних
-    handlebars({
-      // Шлях до папки з перевикористовуваними компонентами (header, footer, head тощо)
+   handlebars({
       partialDirectory: resolve(__dirname, 'src/html/partials'),
-      
-      // Функція для передачі контексту (змінних) у шаблони залежно від поточної сторінки
       context(pagePath) {
+        // Handlebars отримає контекст (включно з homeMenu або menuData) залежно від сторінки
         return pageData[pagePath] || {};
       },
     }),
@@ -109,11 +74,8 @@ export default defineConfig({
      BUILD CONFIGURATION
      ========================================= */
   build: {
-    // Директорія для готової збірки
     outDir: 'dist',
-    // Очищати папку dist перед кожною збіркою
     emptyOutDir: true,
-    // Генерація sourcemaps для дебагу продакшн коду (можна вимкнути: false)
     sourcemap: true,
 
     // Налаштування Rollup для багатосторінкової збірки
@@ -126,7 +88,7 @@ export default defineConfig({
         entryFileNames: 'assets/js/[name]-[hash].js',
         chunkFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').at(1);
+          let extType = assetInfo.name.split('.').at(-1);
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = 'images';
           } else if (/woff|woff2/.test(extType)) {
@@ -144,14 +106,10 @@ export default defineConfig({
      DEV SERVER CONFIGURATION
      ========================================= */
   server: {
-    port: 3000, // Порт локального сервера
-    open: true, // Автоматично відкривати браузер
-    cors: true, // Дозволити CORS
+    port: 3000,
+    open: true, 
+    cors: true,
   },
-
-  /* =========================================
-     CSS CONFIGURATION
-     ========================================= */
   css: {
     devSourcemap: true, // Sourcemaps для CSS під час розробки
   }
