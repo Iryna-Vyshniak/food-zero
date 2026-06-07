@@ -1,0 +1,43 @@
+.hero-about {
+  position: relative;
+  min-block-size: 100dvh;
+  display: grid;
+  align-items: center;
+  padding-block: var(--sp-xl);
+
+  background-image: url('/src/assets/images/content/hero-bg-about.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.42);
+  z-index: 1;
+}
+
+.hero__container--about {
+  position: relative;
+  z-index: 2;
+  inline-size: 100%;
+}
+
+
+.hero__content--about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: var(--sp-md);
+  inline-size: 100%;
+}
+
+@media (min-width: 48rem) {
+  .hero__content--about {
+    max-inline-size: 70%;
+    margin-inline-start: auto;
+  }
+}
