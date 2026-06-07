@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head }}
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- ================= HEADER PARTIAL ================= -->
+    {{> header modifier="header--transparent"}}
+    <main id="main-content">
+      <!-- HERO SECTION -->
+      <section class="hero hero-menu" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero__content--menu">
+            <h1 id="hero-heading" class="hero__title text-h1 color-inverse">
+              <span class="sr-only">FoodZero — </span>
+              View Our <br aria-hidden="true" />
+              New Menu
+            </h1>
+            <p class="hero__desc subtitle">The freshest ingredients for you every day</p>
+          </div>
+        </div>
+      </section>
+      <!-- 1. Starters Section (Image Left, Text Right on Desktop) -->
+      <section class="menu-section menu-section--starters" aria-labelledby="starters-title">
+        <div class="container">
+          <header class="menu-section__header">
+            <h2 id="starters-title" class="menu-section__title text-h2 color-primary">Starters</h2>
+            <p class="menu-section__desc">
+              This is a section of your menu. Give your section a brief description
+            </p>
+          </header>
+
+          <div class="menu-category">
+            <div class="menu-category__media">
+              <img
+                src="/src/assets/images/content/menu-starters.png"
+                alt="Plate of fresh tomato and mozzarella salad with basil"
+                loading="lazy"
+                width="792"
+                height="989"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <!-- Menu Partial Output -->
+            {{> menu customClass="menu-list--home" ariaLabel="Starters Menu" items=menuData.starters
+            }}
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Mains Section (Text Left, Image Right on Desktop due to nth-of-type(even)) -->
+      <section class="menu-section menu-section--reverse" aria-labelledby="mains-title">
+        <div class="container">
+          <header class="menu-section__header">
+            <h2 id="mains-title" class="menu-section__title text-h2 color-primary">Mains</h2>
+            <p class="menu-section__desc">
+              This is a section of your menu. Give your section a brief description
+            </p>
+          </header>
+
+          <div class="menu-category">
+            <div class="menu-category__media">
+              <img
+                src="/src/assets/images/content/menu-mains.png"
+                alt="Juicy grilled steak with rosemary butter"
+                loading="lazy"
+                width="792"
+                height="989"
+              />
+            </div>
+
+            <!-- Menu Partial Output -->
+            {{> menu customClass="menu-list--home" ariaLabel="Starters Menu" items=menuData.mains }}
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Pastries & Drinks Section (Image Left, Text Right on Desktop) -->
+      <section class="menu-section" aria-labelledby="pastries-title">
+        <div class="container">
+          <header class="menu-section__header menu-section__header-pastries">
+            <h2 id="pastries-title" class="menu-section__title text-h2 color-primary">
+              Pastries & Drinks
+            </h2>
+            <p class="menu-section__desc">
+              This is a section of your menu. Give your section a brief description
+            </p>
+          </header>
+
+          <div class="menu-category">
+            <div class="menu-category__media">
+              <img
+                src="src/assets/images/content/menu-drinks.png"
+                alt="Three glasses of orange cocktails with citrus garnish"
+                loading="lazy"
+                width="792"
+                height="989"
+              />
+            </div>
+
+            <!-- Menu Partial Output -->
+            {{> menu customClass="menu-list--home" ariaLabel="Starters Menu" items=menuData.pastries
+            }}
+          </div>
+        </div>
+      </section>
+      {{> reservation}}
+    </main>
+    {{> footer }}
+  </body>
+</html>
