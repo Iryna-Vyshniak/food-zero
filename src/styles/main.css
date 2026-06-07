@@ -2,7 +2,7 @@
    MAIN CSS ORCHESTRATOR (ITCSS ARCHITECTURE)
    ========================================= */
 
-@import './base/tokens.css';
+@import './base/variables.css';
 @import './base/reset.css';
 @import './base/typography.css';
 
@@ -21,3 +21,4 @@
 
 
 @import './pages/home.css';
+@import './pages/menu.css';

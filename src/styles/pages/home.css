@@ -476,7 +476,7 @@
 
 /* ANCHOR POSITIONING */
 .testimonial__decor {
-  inline-size: clamp(5.25rem, calc(5.25rem + 10.375 * var(--vw-range)), 17.625rem);
+  inline-size: clamp(4rem, calc(4rem + 13 * var(--vw-range)), 17.625rem);
   aspect-ratio: 1/1;
   color: var(--c-bg-primary);
   z-index: 1;
