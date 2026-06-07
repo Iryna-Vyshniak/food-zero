@@ -34,7 +34,7 @@
 .overlay-menu::backdrop {
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
- transition: 
+  transition: 
     opacity var(--transition-slow) var(--ease-out-expo),
     display var(--transition-slow) allow-discrete,
     overlay var(--transition-slow) allow-discrete;
@@ -45,17 +45,15 @@
   display: grid;
 }
 
-@starting-style {
-  .overlay-menu[open] {
-    translate: 100% 0;
-  }
-}
-
 .overlay-menu[open]::backdrop {
   opacity: 1;
 }
 
+/* Анімація появи з дискретними властивостями (@starting-style) */
 @starting-style {
+  .overlay-menu[open] {
+    translate: 100% 0;
+  }
   .overlay-menu[open]::backdrop {
     opacity: 0;
   }
@@ -64,13 +62,13 @@
 .overlay-menu__inner {
   position: relative;
   z-index: 1;
-  container-type: inline-size;
   display: grid;
   grid-template-rows: auto 1fr;
   block-size: 100%;
   padding-block: var(--sp-sm) var(--sp-xl);
   padding-inline: var(--container-padding);
   overflow-y: auto;
+  container: overlay-container inline-size;
 }
 
 .overlay-menu__header {
@@ -90,8 +88,8 @@
 }
 
 .icon-close {
-  width: 1.625rem;
-  height: 1rem;
+  inline-size: 5.25rem;
+  block-size: 3.9375rem;
 }
 
 .overlay-menu__close:hover .icon-close,
@@ -125,6 +123,7 @@
   border: none;
   cursor: pointer;
   text-decoration: none;
+  transition: color var(--transition);
 }
 
 .overlay-nav__link::before,
@@ -150,11 +149,11 @@
   padding-block-start: 1rem;
 }
 
-.overlay-nav__item--expanded .overlay-nav__sublist {
+.overlay-nav__toggle[aria-expanded="true"] + .overlay-nav__sublist {
   display: flex;
 }
 
-.overlay-nav__item--expanded .overlay-nav__toggle {
+.overlay-nav__toggle[aria-expanded="true"] + .overlay-nav__toggle {
   color: var(--c-brand-light);
 }
 
@@ -163,6 +162,7 @@
   font-size: var(--fs-body);
   color: var(--c-bg-primary);
   text-decoration: none;
+  transition: color var(--transition);
 }
 
 .overlay-nav__sublink:hover,
@@ -171,6 +171,7 @@
 }
 
 .overlay-menu__contact {
+  align-self: end;
   display: flex;
   flex-direction: column;
   gap: var(--sp-sm);
@@ -186,7 +187,21 @@
   border-bottom: 0.25rem dashed var(--c-bg-white);
 }
 
-/* A11y: Reduced motion override */
+
+@container overlay-container (min-width: 48rem) {
+  .overlay-menu__body {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .overlay-menu__contact {
+    border-block-start: none;
+    padding-block-start: 0;
+    padding-inline-start: var(--sp-xl);
+  }
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   .overlay-menu,
   .overlay-menu::backdrop {
