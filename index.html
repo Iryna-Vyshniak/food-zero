@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     {{> head }}
@@ -181,7 +181,11 @@
             </p>
           </header>
 
-        {{> menu }}
+   {{> menu 
+    customClass="menu__list--grid" 
+    ariaLabel="Featured Menu" 
+    items=homeMenu 
+}}
         </div>
         <img 
   src="/src/assets/images/content/plant.png" 
@@ -191,6 +195,7 @@
   height="946" 
   aria-hidden="true" 
   loading="lazy" 
+  decoding="async"
 />
       </section>
 
