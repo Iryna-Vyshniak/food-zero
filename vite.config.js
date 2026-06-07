@@ -25,31 +25,19 @@ const pageData = {
 export default defineConfig({
   root: './', 
   base: '/',
-
-  /* =========================================
-     PLUGINS CONFIGURATION
-     ========================================= */
   plugins: [
    handlebars({
       partialDirectory: resolve(__dirname, 'src/html/partials'),
       context(pagePath) {
-        // Handlebars отримає контекст (включно з homeMenu або menuData) залежно від сторінки
         return pageData[pagePath] || {};
       },
     }),
-
-    // Конфігурація для генерації SVG спрайтів
     createSvgIconsPlugin({
-      // Вкажіть директорію, де лежать окремі .svg файли іконок
       iconDirs: [resolve(process.cwd(), 'src/assets/images/icons')],
-      // Формат ідентифікатора для тегу <use> (наприклад, #icon-facebook)
       symbolId: 'icon-[dir]-[name]',
-      // Можна налаштувати інжекцію в body-first або body-last
       inject: 'body-last',
       customDomId: '__svg__icons__dom__',
     }),
-
-    // Налаштування оптимізатора зображень для продакшн-збірки
     ViteImageOptimizer({
       test: /\.(jpe?g|png|gif|tiff|webp|svg|avif)$/i,
       includePublic: true,
@@ -69,10 +57,6 @@ export default defineConfig({
       }
     })
   ],
-
-  /* =========================================
-     BUILD CONFIGURATION
-     ========================================= */
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -82,6 +66,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        menu: resolve(__dirname, 'menu.html'),
       },
       output: {
         // Налаштування імен файлів у папці dist для кращого кешування
@@ -101,10 +86,6 @@ export default defineConfig({
       }
     },
   },
-  
-  /* =========================================
-     DEV SERVER CONFIGURATION
-     ========================================= */
   server: {
     port: 3000,
     open: true, 
