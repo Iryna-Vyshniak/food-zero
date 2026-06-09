@@ -70,7 +70,7 @@
   align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .story-grid {
     grid-template-columns: 10fr 14fr;
   }
@@ -95,7 +95,7 @@
 
 .story-image {
   aspect-ratio: 792 / 567;
-  width: 100%;
+  inline-size: 100%;
 }
 
 /* STAFF SECTION */
@@ -142,7 +142,7 @@
   max-inline-size: 40ch;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .staff-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto auto auto;
@@ -162,7 +162,7 @@
 
   .staff-card:nth-child(odd) .staff-media {
     grid-column: 1;
-    grid-row: 2 / span 3; 
+    grid-row: 2 / span 3;
   }
 
   .staff-card:nth-child(odd) .staff-desc {
@@ -182,14 +182,14 @@
   .staff-card:nth-child(even) .staff-card__header {
     grid-column: 2;
     grid-row: 3;
-    align-self: end; 
+    align-self: end;
     margin-block-start: clamp(10rem, 12vw, 20.5625rem);
     margin-block-end: var(--sp-s);
   }
 
   .staff-card:nth-child(even) .staff-media {
     grid-column: 2;
-    grid-row: 4 / span 2; 
+    grid-row: 4 / span 2;
   }
 }
 
@@ -274,6 +274,137 @@
 }
 
 .btn-play:focus-visible {
-  outline: 2px solid var(--c-brand-light);
-  outline-offset: 4px;
+  outline: 0.125rem solid var(--c-brand-light);
+  outline-offset: 0.25rem;
+}
+
+/* PROCESS SEECTION */
+.process-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.process-section::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: -10%;
+  inline-size: clamp(18.75rem, calc(18.75rem + 37 * var(--vw-range)), 42.6875rem);
+  aspect-ratio: 1 / 1;
+  background-image: url('/src/assets/images/icons/vector-rosmary.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.process-section::after {
+  content: '';
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: -10%;
+  inline-size: clamp(18.75rem, calc(18.75rem + 37 * var(--vw-range)), 42.6875rem);
+  aspect-ratio: 1 / 1;
+  background-image: url('/src/assets/images/icons/vector-rosmary.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -2;
+  opacity: 0.2;
+  transform: rotate(263deg);
+  pointer-events: none;
+}
+
+.process-header {
+  text-align: center;
+  margin-block-end: var(--sp-xl);
+  position: relative;
+}
+
+.process-title {
+  margin-block-end: 1.75rem;
+}
+
+.process-list {
+  display: grid;
+  gap: var(--sp-xl) var(--grid-gutter);
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-m);
+}
+
+.process-media img {
+   inline-size: 100%;
+   object-fit: cover;
+}
+
+.process-item:nth-child(1) .process-media img {
+  aspect-ratio: 792 / 638;
+}
+
+.process-item:nth-child(2) .process-media img {
+  aspect-ratio: 650 / 533;
+}
+
+.process-item:nth-child(3) .process-media img {
+  aspect-ratio: 649 / 509;
+}
+
+.process-step-title {
+  margin-block-end: var(--sp-s);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.process-text {
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--c-text-dark-grey);
+}
+
+/* Desktop Asymmetric Grid Placement */
+@media (min-width: 48rem) {
+  .process-list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--sp-xl) var(--grid-gutter);
+    align-items: start;
+  }
+
+
+  .process-item:nth-child(1) {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--grid-gutter);
+  }
+
+  .process-item .process-content {
+    padding-inline: 10%; 
+  }
+  .process-item:nth-child(3) .process-content {
+    padding-inline-start: 0%; 
+  }
+
+  .process-item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+    align-content: start;
+  }
+
+  .process-item:nth-child(3) {
+    padding-inline-start: 10%; 
+    grid-column: 1;
+    grid-row: 2;
+    align-content: start;
+  }
+
+  .process-item:nth-child(3) .process-content {
+    order: -1;
+  }
 }
