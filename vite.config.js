@@ -20,6 +20,10 @@ const pageData = {
     description: 'Explore our seasonal menu featuring Starters, Mains, and Pastries & Drinks made with fresh ingredients.',
     menuData: menuData 
   },
+  '/about.html': {
+    "title": "FoodZero | Who We Are",
+    "description": "Learn about our story, zero-waste philosophy, meet our restaurant manager and executive chef.",
+  },
 };
 
 export default defineConfig({
@@ -60,26 +64,29 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: true,
+    sourcemap: false,
 
     // Налаштування Rollup для багатосторінкової збірки
-    rollupOptions: {
+ rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
         menu: resolve(__dirname, 'menu.html'),
         about: resolve(__dirname, 'about.html'),
       },
       output: {
-        // Налаштування імен файлів у папці dist для кращого кешування
         entryFileNames: 'assets/js/[name]-[hash].js',
         chunkFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').at(-1);
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+          // Запобіжник на випадок відсутності імені файлу
+          if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
+
+          let extType = assetInfo.name.split('.').at(-1).toLowerCase();
+          
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp|avif/i.test(extType)) {
             extType = 'images';
-          } else if (/woff|woff2/.test(extType)) {
+          } else if (/woff|woff2|eot|ttf|otf/i.test(extType)) {
             extType = 'fonts';
-          } else if (/css/.test(extType)) {
+          } else if (/css/i.test(extType)) {
             extType = 'css';
           }
           return `assets/${extType}/[name]-[hash][extname]`;
