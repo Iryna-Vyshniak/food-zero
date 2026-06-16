@@ -35,7 +35,7 @@
                             id="hero-heading"
                             class="hero__title text-h1 color-inverse"
                         >Who We Are</h1>
-                        <p class="hero__desc subtitle">
+                        <p class="hero__desc hero-subtitle">
                             The most important thing for us is to give you the comfortable dining experience
                         </p>
                     </div>
@@ -76,7 +76,10 @@
                 aria-label="Our staff"
             >
                 <div class="staff-grid">
-
+                    <h2
+                        id="staff-heading"
+                        class="sr-only"
+                    >Restaurant Staff</h2>
                     <!-- Staff Member 1 -->
                     <article class="staff-card">
                         <header class="staff-card__header">
@@ -251,7 +254,7 @@
 
             </section>
             <!-- reservation -->
-            {{> reservation }}
+           {{> reservation isFull=false }}
         </main>
         {{> footer }}
     </body>
