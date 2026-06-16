@@ -1,12 +1,12 @@
 <ul class="menu__list {{#if customClass}}{{customClass}}{{/if}}" aria-label="{{ariaLabel}}">
   {{#each items}}
   <li class="menu__item">
-    <h3 class="menu__item-title">{{this.title}}</h3>
-    <p class="menu__item-desc">{{this.description}}</p>
+    <h3 class="menu__item-title">{{title}}</h3>
+    <p class="menu__item-desc">{{description}}</p>
     
     <div class="menu__item-price-wrapper">
-      <span class="sr-only">Price: {{this.price}} dollars</span>
-      <data class="menu__item-price" value="{{this.price}}" aria-hidden="true">${{this.price}}</data>
+      <span class="sr-only">Price: {{price}} dollars</span>
+      <data class="menu__item-price" value="{{price}}" aria-hidden="true">${{price}}</data>
     </div>
   </li>
   {{/each}}
