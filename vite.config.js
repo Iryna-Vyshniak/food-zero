@@ -19,7 +19,7 @@ const getPageContext = (pagePath) => {
   const dynamicData = {
     '/index.html': { homeMenu: menuData.homeMenu, homeArticles: blogData.articles.slice(0, 2) },
     '/menu.html': { menuData: menuData },
-    '/bloglist.html': {blogData: blogData.articles}, 
+    '/bloglist.html': { blogData: blogData.articles },
     '/article-meat.html': { widgetBlog: blogData.articles.slice(0, 4) },
     // Add other page-specific data imports here as the project grows
   };
@@ -31,7 +31,7 @@ const getPageContext = (pagePath) => {
 };
 
 export default defineConfig({
-  root: './', 
+  root: './',
   base: '/',
   plugins: [
     handlebars({
@@ -56,7 +56,7 @@ export default defineConfig({
       svg: {
         multipass: true,
         plugins: [
-          { name: 'removeViewBox', active: false }, 
+          { name: 'removeViewBox', active: false },
           { name: 'sortAttrs' },
           { name: 'removeDimensions', active: true },
         ]
@@ -72,7 +72,10 @@ export default defineConfig({
         index: resolve(__dirname, 'index.html'),
         menu: resolve(__dirname, 'menu.html'),
         about: resolve(__dirname, 'about.html'),
-        bloglist: resolve(__dirname, 'bloglist.html'), 
+        bloglist: resolve(__dirname, 'bloglist.html'),
+        'article-meat': resolve(__dirname, 'article-meat.html'),
+        contact: resolve(__dirname, 'contact.html'),
+        singledish: resolve(__dirname, 'singledish.html'),
       },
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',
@@ -81,7 +84,7 @@ export default defineConfig({
           if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
 
           let extType = assetInfo.name.split('.').at(-1).toLowerCase();
-          
+
           if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp|avif/i.test(extType)) {
             extType = 'images';
           } else if (/woff|woff2|eot|ttf|otf/i.test(extType)) {
@@ -96,7 +99,7 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    open: true, 
+    open: true,
     cors: true,
   },
   css: {
