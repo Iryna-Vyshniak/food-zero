@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {{> head }}
+        <link
+            rel="stylesheet"
+            href="/src/styles/main.css"
+        />
+        <script
+            type="module"
+            src="/src/js/main.js"
+        ></script>
+    </head>
+<body>
+    <!-- ================= HEADER PARTIAL ================= -->
+        {{> header modifier="header--transparent"}}
+
+        <!-- ================= OVERLAY MENU PARTIAL ================= -->
+        {{> overlay-menu }}
+
+        <!-- ================= MAIN CONTENT ================= -->
+    <main id="main-content">
+          <!-- hero -->
+            <section
+                class="hero hero-blogs"
+                aria-labelledby="hero-heading"
+            >
+                <div class="container hero__container--blogs">
+                    <div class="hero__content--blogs">
+                        <h1
+                            id="hero-heading"
+                            class="hero__title hero__title--blogs text-h1 color-inverse"
+                        >The FoodZero Journal</h1>
+                        <p class="hero__desc subtitle">
+                            Fresh stories, culinary secrets, and seasonal recipes delivered daily.
+                        </p>
+                    </div>
+                </div>
+            </section>
+             <div class="breadcrumbs-wrapper container container-narrow">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumbs-list">
+          <li class="breadcrumbs-item"><a href="/" class="breadcrumbs-link">Home</a></li>
+          <li class="breadcrumbs-item"><a href="#" class="breadcrumbs-link" aria-current="page">The FoodZero Journal</a></li>
+        </ol>
+      </nav>
+    </div>
+    <section class="section-spacing container" aria-labelledby="blog-heading">
+      <h2 id="blog-heading" class="sr-only">Latest from our blog</h2>
+      
+      <!-- Target semantic container for Handlebars injection -->
+      <ul id="blog-container" class="blog__list" aria-label="Blog posts">
+     {{> card modifier="blog-card--horizontal" items=blogData}}
+      </ul>
+    </section>
+    </main>
+    {{> footer }}
+</body>
+</html>
