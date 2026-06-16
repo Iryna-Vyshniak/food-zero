@@ -1,0 +1,225 @@
+.hero-contact {
+  position: relative;
+  min-block-size: 100dvh;
+  display: grid;
+  align-items: center;
+  padding-block: var(--sp-xl);
+
+  background-image: url('/src/assets/images/content/hero-bg-contact.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero__content--contact {
+  z-index: 2;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-m);
+  flex-grow: 1;
+
+  width: 100%;
+  max-width: var(--layout-max-width);
+
+  margin-inline: auto;
+  margin-block-end: 5.8125rem;
+}
+
+.hero-contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.hero-contact > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__title--contact {
+  inline-size: 100%;
+}
+
+@media (min-width: 48rem) {
+  .hero__title--contact {
+    max-inline-size: 50vi;
+  }
+}
+
+/* Open Time Schedule Component */
+.schedule {
+  width: 100%;
+  max-width: 43.5rem;
+  margin-inline-start: auto;
+}
+
+.schedule__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--ff-body);
+  margin-block-end: 2.375rem;
+}
+
+.schedule__title {
+  font-size: var(--fs-body-m);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.schedule__days {
+  font-size: var(--fs-body-lg);
+}
+
+.schedule__divider {
+  border: 0;
+  border-bottom: 2px dashed var(--c-bg-white);
+  margin-block-end: 2.375rem;
+}
+
+.schedule__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .schedule__list {
+    gap: 6rem;
+  }
+}
+
+.schedule__item dt {
+  margin-block-end: 0.25em;
+}
+
+.schedule__item dd {
+  font-feature-settings: 'tnum';
+}
+
+/* =================
+       Section: Asymmetric Contact Details
+      ======================== */
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+@media (min-width: 64rem) {
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9.0625rem;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12.625rem;
+  }
+
+  .contact-row--reverse .contact-row__image-wrapper {
+    order: 2;
+  }
+
+  .contact-row--reverse .contact-row__content {
+    order: 1;
+  }
+}
+
+.contact-row__image-wrapper {
+  position: relative;
+  inline-size: 100%;
+}
+
+.contact-row__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.contact-row__image--landscape {
+  aspect-ratio: 792 / 593;
+  max-inline-size: 49.5rem;
+}
+
+.contact-row__image--portrait {
+  aspect-ratio: 792 / 990.5;
+  max-inline-size: 49.5rem;
+}
+
+@media (min-width: 64rem) {
+  .contact-row__image-wrapper--decorated::before {
+    content: '';
+    position: absolute;
+    inset-block-start: -30%;
+    inset-inline-end: -47%;
+    inline-size: clamp(15.625rem, 25vi, 17.625rem);
+    aspect-ratio: 1;
+    background-image: url('/src/assets/images/icons/vector-orange.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+fill: var(--c-bg-primary);
+    z-index: -1;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+/* Content Styling & Max Inline Constraints */
+.contact-row__content {
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  font-size: var(--sp-sm);
+  line-height: 1.5;
+  color: var(--c-brand-dark);
+}
+
+.contact-row__address {
+  margin-block-end: 3.3125rem;
+}
+
+.contact-row__text,
+.contact-row__address {
+  max-inline-size: 45ch;
+  font-style: normal;
+}
+
+.contact-row__link {
+  color: var(--c-brand-light);
+}
+
+.contact-row__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.contact-row--btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.625rem;
+
+  border: 2px solid var(--c-text-black);
+  padding-block: 1.25rem;
+  padding-inline: 2.875rem;
+  width: 18.3125rem;
+  height: 5.5rem;
+}

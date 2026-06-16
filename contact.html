@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{> head }}
+        <link
+            rel="stylesheet"
+            href="/src/styles/main.css"
+        />
+        <script
+            type="module"
+            src="/src/js/main.js"
+        ></script>
+    </head>
+    <body>
+        <a
+            class="skip-link"
+            href="#main-content"
+        >Skip to content</a>
+        <!-- ================= HEADER PARTIAL ================= -->
+        {{> header modifier="header--transparent"}}
+
+        <!-- ================= OVERLAY MENU PARTIAL ================= -->
+        {{> overlay-menu }}
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main id="main-content">
+            <!-- HERO SECTION -->
+            <section
+                class="hero hero-contact"
+                aria-labelledby="hero-heading"
+            >
+                <div class="container">
+                    <div class="hero__content--contact">
+                        <h1
+                            id="hero-heading"
+                            class="hero__title hero-title--contact text-h1 color-inverse"
+                        >
+                            <span class="sr-only">FoodZero — </span>
+                            Get in Touch
+                        </h1>
+                        <p class="hero__desc--contact hero-subtitle ">The freshest ingredients for you every day</p>
+                    </div>
+                    <div class="schedule">
+                        <div class="schedule__header">
+                            <h2 class="schedule__title">Open Time</h2>
+                            <span class="schedule__days">Sunday - Friday</span>
+                        </div>
+                        <hr
+                            class="schedule__divider"
+                            aria-hidden="true"
+                        >
+
+                        <dl class="schedule__list">
+                            <div class="schedule__item subtitle">
+                                <dt>Brunch</dt>
+                                <dd><time datetime="11:00">11:00</time>&ndash;<time datetime="12:00">12:00</time></dd>
+                            </div>
+                            <div class="schedule__item">
+                                <dt>Lunch</dt>
+                                <dd><time datetime="13:00">13:00</time>&ndash;<time datetime="17:00">17:00</time></dd>
+                            </div>
+                            <div class="schedule__item">
+                                <dt>Dinner</dt>
+                                <dd><time datetime="18:00">18:00</time>&ndash;<time datetime="20:00">20:00</time></dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                </div>
+            </section>
+            <section
+                class="section-spacing"
+                aria-labelledby="contact-locations-heading"
+            >
+                <div class="container">
+                    <h2
+                        id="contact-locations-heading"
+                        class="sr-only"
+                    >Contact Locations and Methods</h2>
+
+                    <ul class="contact-list">
+                        <li class="contact-row">
+                            <div class="contact-row__image-wrapper contact-row__image-wrapper--decorated">
+                                <img
+                                    src="/src/assets/images/content/contact-img-1.png"
+                                    alt="A beautifully set outdoor table decorated with fresh lemons"
+                                    width="792"
+                                    class="contact-row__image contact-row__image--landscape"
+                                    loading="lazy"
+                                >
+                            </div>
+                            <div class="contact-row__content">
+                                <p class="contact-row__text">
+                                    We can be contacted via email
+                                    <a
+                                        href="mailto:info@foodzero.com"
+                                        class="contact-row__link"
+                                    >info@foodzero.com</a>
+                                    or telephone on
+                                    <a
+                                        href="tel:+86852346000"
+                                        class="contact-row__link"
+                                    >+86 852 346 000</a>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="contact-row contact-row--reverse">
+                            <div class="contact-row__image-wrapper">
+                                <img
+                                    src="/src/assets/images/content/contact-img-2.png"
+                                    width="792"
+                                    alt="Exterior view of our greenhouse style restaurant surrounded by nature"
+                                    class="contact-row__image contact-row__image--portrait"
+                                    loading="lazy"
+                                >
+                            </div>
+                            <div class="contact-row__content">
+
+                                <address class="contact-row__address">
+                                    We are located in 1959 Sepulveda Blvd. Culver City, CA, 90230
+                                </address>
+
+                                <a
+                                    href="https://maps.google.com/?q=1959+Sepulveda+Blvd,+Culver+City,+CA+90230"
+                                    class="btn contact-row--btn"
+                                    aria-label="View 1959 Sepulveda Blvd location on Google Maps"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <p class="color-primary">View in maps</p>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+            {{> reservation isFull=true }}
+        </main>
+        {{> footer }}
+    </body>
+</html>
