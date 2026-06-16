@@ -1,0 +1,70 @@
+{{#each items}}
+    <li>
+        <article
+            class="blog-card {{../modifier}}"
+            aria-labelledby="post-{{id}}-heading"
+        >
+            <div class="blog-card__img-wrapper">
+                <img
+                    src="{{image}}"
+                    onerror="src = 'https://placehold.co/800x600/EBF0E4/4D4D4D?text=Blog+Post'"
+                    alt="{{alt}}"
+                    class="blog-card__img"
+                    {{#if
+                    isFirst}}
+                    loading="eager"
+                    decoding="sync"
+                    fetchpriority="high"
+                    {{else}}
+                    loading="lazy"
+                    decoding="async"
+                    {{/if}}
+                    width="792"
+                />
+                <span class="blog-card__tag">{{category}}</span>
+            </div>
+
+            <div class="blog-card__meta">
+                <div class="blog-card__avatar"> <img
+                    src="{{authorAvatar}}"
+                    onerror="src = 'https://placehold.co/60x60/9CAA00/FFFFFF?text=JC'"
+                    alt="{{authorName}}"
+                    loading="lazy"
+                    width="60"
+                /></div>
+               <ul class="blog-card__meta-details" aria-label="Post metadata">
+    <li class="blog-card__meta-item blog-card__meta-item--author">
+        <span class="sr-only">Author:</span>
+        <span class="blog-card__author">{{authorName}}</span>
+    </li>
+    <li class="blog-card__meta-item blog-card__meta-item--date">
+        <time datetime="{{dateISO}}">{{dateDisplay}}</time>
+    </li>
+    <li class="blog-card__meta-item blog-card__meta-item--time">
+        <time datetime="{{timeISO}}">{{timeDisplay}}</time>
+    </li>
+    <li class="blog-card__meta-item blog-card__meta-item--comments">
+        {{comments}} comments
+    </li>
+</ul>
+            </div>
+
+            <h3
+                id="post-{{id}}-heading"
+                class="text-h4 color-primary blog-card__title"
+            >
+                <a href="{{url}}">{{title}}</a>
+            </h3>
+            <p class="blog-card__excerpt">
+                {{excerpt}}
+            </p>
+            <a
+                href="{{url}}"
+                class="blog-card__link"
+                aria-label="Read more about {{title}}"
+            >Read More <svg aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                </svg></a>
+                </article>
+    </li>
+{{/each}}
