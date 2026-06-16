@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{> head }}
+        <link
+            rel="stylesheet"
+            href="/src/styles/main.css"
+        />
+        <script
+            type="module"
+            src="/src/js/main.js"
+        ></script>
+    </head>
+    <body>
+        <!-- ================= HEADER PARTIAL ================= -->
+        {{> header modifier="header--transparent"}}
+
+        <!-- ================= OVERLAY MENU PARTIAL ================= -->
+        {{> overlay-menu }}
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main id="main-content">
+            <!-- hero -->
+            <section
+                class="hero hero-dish"
+                aria-labelledby="hero-heading"
+            >
+                <div class="container hero__container--dish">
+
+                    <h1
+                        id="hero-heading"
+                        class="hero__title hero__title--dish text-h1 color-inverse"
+                    >Deep Sea Snow White Cod Fillet</h1>
+                    <a
+                        class="scroll-indicator scroll-indicator--dish"
+                        href="#after-hero"
+                        aria-label="Scroll down"
+                    >
+                        <span>Scroll</span>
+                    </a>
+
+
+                </div>
+            </section>
+            <div
+                id="after-hero"
+                class="sr-only"
+                aria-hidden="true"
+            ></div>
+            <!-- Editorial Split Section -->
+            <section
+                class="section-spacing section-editorial container"
+                aria-label="Dish Details"
+            >
+                <div class="editorial-grid">
+
+                    <!-- Flat DOM Structure for Mobile Stacking Order -->
+                    <div class="editorial-grid__image-wrapper editorial-grid__img-primary"><img
+                            src="/src/assets/images/content/dish-img-1.png"
+                            alt="A refreshing lime and herb cocktail"
+                            loading="lazy"
+                        ></div>
+
+
+                    <article class="editorial-grid__text-primary text-block">
+                        <h2 class="text-block__title  text-h4 color-primary">Melt in Your Mouth</h2>
+                        <p class="text-block__body subtitle">Sourced directly from the pristine, icy waters of the deep Atlantic, our Snow White Cod offers an unparalleled dining experience.</p>
+                        <p class="text-block__body subtitle">Known for its large, delicate flakes and rich, buttery flavor profile, each fillet is carefully selected to ensure the highest quality. The meat literally melts on the palate, leaving a lingering, delicate sweetness that speaks to its premium origin.</p>
+                    </article>
+
+                    <div class="editorial-grid__image-wrapper editorial-grid__img-secondary"> <img
+                            src="/src/assets/images/content/dish-img-2.png"
+                            alt="Plated piece of seared cod with herb crust and green puree"
+                            loading="lazy"
+                        ></div>
+
+
+                    <article class="editorial-grid__text-secondary text-block">
+                        <h2 class="text-block__title text-h4 color-primary">The Best Taste</h2>
+                        <p class="text-block__body subtitle">Enhanced with a subtle infusion of organic herbs and finished with a light citrus drizzle, this dish perfectly balances natural richness with a refreshing acidity.</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Centered Feature Section -->
+            <section
+                class="section-centered container"
+                aria-label="Cooking Information"
+            >
+                <div class="feature-wrapper">
+                    <article class="article-centered">
+                        <!-- Semantically structured despite visual DOM order anomalies in mockup -->
+                        <p class="article-centered__body subtitle">To maintain the integrity of its delicate texture, we strictly recommend avoiding high-heat searing, which can dry out the natural oils.</p>
+                        <header class="article-centered--header">
+                            <h2 class="article-centered__title text-h4 color-primary ">Cooking Suggestions</h2>
+                            <p class="article-centered__body subtitle">Gently poach in a shallow bath of white wine and aromatics, or bake slowly at a low temperature wrapped in parchment. Serve immediately to capture its peak succulence.</p>
+                        </header>
+
+                    </article>
+
+                    <div class="feature-image-wrapper">
+                        <img
+                            src="/src/assets/images/content/dish-img-3.png"
+                            alt="Beautifully plated cod fillet with vibrant roasted vegetables"
+                            class="feature-image"
+                            loading="lazy"
+                        >
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Semantic Pagination Footer -->
+            <section class="section-spacing section-pagination">
+                <nav
+                    class="container"
+                    aria-label="Menu Pagination"
+                >
+                    <ul class="pagination-nav">
+
+                        <!-- Previous Item -->
+                        <li class="pagination__item pagination__item--prev">
+                            <a
+                                href="/article-meat.html"
+                                class="pagination__link"
+                            >
+                                <span class="pagination__label">
+                                    <svg aria-hidden="true">
+                                        <use href="#icon-arrow-left"></use>
+                                    </svg>
+                                    Previous Page
+                                </span>
+                                <span class="pagination__title">Strip Steak With Rosemary Butter</span>
+                            </a>
+                        </li>
+
+                        <!-- Back to Index / Grid Icon -->
+                        <li class="pagination__item pagination__item--center">
+                            <a
+                                href="/bloglist.html"
+                                class="icon-grid"
+                                aria-label="Back to full menu"
+                            >
+                                <svg aria-hidden="true">
+                                    <use href="#icon-back"></use>
+                                </svg>
+                            </a>
+                        </li>
+
+                        <!-- Next Item -->
+                        <li class="pagination__item pagination__item--next">
+                            <a
+                                href="/article-meat.html"
+                                class="pagination__link"
+                            >
+                                <span class="pagination__label">
+                                    Next Page
+                                    <svg aria-hidden="true">
+                                        <use href="#icon-arrow-right"></use>
+                                    </svg>
+                                </span>
+                                <span class="pagination__title">Option of natural wine available</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </section>
+        </main>
+        {{> footer }}
+        </body>
+</html>
