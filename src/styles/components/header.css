@@ -10,8 +10,22 @@
 }
 
 .header--transparent {
-  background-color: transparent;
   position: absolute;
+  background-color: transparent;
+  animation: headerScroll linear forwards;
+  animation-timeline: scroll();
+
+  /* The animation will start at 0px scroll and finish at 100px scroll */
+  animation-range: 0 100px;
+}
+
+/* Define the final state of the header */
+@keyframes headerScroll {
+  100% {
+    position: sticky;
+    background-color: var(--c-brand-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  }
 }
 
 .nav {
@@ -37,13 +51,13 @@
 
 .nav__logo:hover,
 .nav__logo:focus-visible {
-  color: var(--c-brand-light); 
+  color: var(--c-brand-light);
 }
 
 .logo-svg {
- inline-size: clamp(6.25rem, calc(6.25rem + 12.9375 * var(--vw-range)), 19.1875rem);
- max-inline-size: 100%;
- block-size: auto; 
+  inline-size: clamp(6.25rem, calc(6.25rem + 12.9375 * var(--vw-range)), 19.1875rem);
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
 .nav__toggle {
@@ -90,7 +104,6 @@
   color: var(--c-brand-light);
 }
 
-
 @media (min-width: 48rem) {
   .nav__brand {
     gap: var(--sp-md);
@@ -100,7 +113,6 @@
   .nav__controls {
     display: flex;
   }
-
 
   .overlay-menu__body {
     grid-template-columns: 1fr 1fr;
@@ -113,7 +125,6 @@
     padding-inline-start: var(--sp-xl);
   }
 }
-
 
 @media (min-width: 64rem) {
   .nav__phone {
