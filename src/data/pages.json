@@ -1,0 +1,42 @@
+{
+  "/index.html": {
+    "title": "FoodZero | Home",
+    "description": "Experience healthy, sustainable dining and organic recipes at FoodZero restaurant."
+  },
+  "/menu.html": {
+    "title": "FoodZero | Our Menu",
+    "description": "Explore our seasonal menu featuring Starters, Mains, and Pastries & Drinks made with fresh ingredients."
+  },
+  "/about.html": {
+    "title": "FoodZero | Who We Are",
+    "description": "Learn about our story, zero-waste philosophy, meet our restaurant manager and executive chef."
+  },
+  "/contact.html": {
+    "title": "FoodZero | Contact Us",
+    "description": "Get in touch with FoodZero. Find our location, opening hours, and make a reservation."
+  },
+  "/portfolio.html": {
+    "title": "FoodZero | Portfolio",
+    "description": "Explore our culinary portfolio featuring our best dishes and drinks showcased in a masonry grid."
+  },
+  "/bloglist.html": {
+    "title": "FoodZero | Blog",
+    "description": "Read our latest articles on healthy eating, organic recipes, and sustainable lifestyle."
+  },
+  "/singledish.html": {
+    "title": "FoodZero | Deep Sea Snow White Cod Fillet",
+    "description": "Discover our signature Deep Sea Snow White Cod Fillet. Melt in your mouth experience with the best taste."
+  },
+  "/singlepost.html": {
+    "title": "FoodZero | Blog Post",
+    "description": "Read detailed insights and stories about sustainable food and cooking techniques."
+  },
+  "/healthy-lifestyle.html": {
+    "title": "FoodZero | Healthy Eating Lifestyle",
+    "description": "Start planning your organic diet today. Discover how a well-balanced diet is the cornerstone of a vibrant life."
+  },
+  "/coming-soon.html": {
+    "title": "FoodZero | Coming Soon",
+    "description": "Our new menu and features are launching soon. Stay tuned for updates."
+  }
+}
