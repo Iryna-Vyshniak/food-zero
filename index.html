@@ -2,14 +2,20 @@
 <html lang="en">
   <head>
     {{> head }}
-    <link rel="stylesheet" href="/src/styles/main.css">
+    <link
+      rel="stylesheet"
+      href="/src/styles/main.css"
+    >
     <script
       type="module"
       src="/src/js/main.js"
     ></script>
   </head>
   <body>
-     <a class="skip-link" href="#main">Skip to content</a>
+    <a
+      class="skip-link"
+      href="#main"
+    >Skip to content</a>
     <!-- ================= HEADER PARTIAL ================= -->
     {{> header }}
 
@@ -35,7 +41,7 @@
               is important <br aria-hidden="true" />
               part of lifestyle
             </h1>
-            <p class="hero__desc subtitle">
+            <p class="hero__desc hero-home__desc subtitle">
               Discover the perfect balance of taste and nutrition. Fuel your body with wholesome
               ingredients and start your journey toward a more vibrant, energetic life today.
             </p>
@@ -134,12 +140,12 @@
             <div class="diet__content">
               <h3
                 id="diet-heading"
-                class="text-h3 color-inverse"
+                class="text-h3 color-inverse diet__content-title"
               >
                 Start to plan <br />
                 your diet today
               </h3>
-              <p class="subtitle">
+              <p class="diet__content-subtitle subtitle">
                 Discover the art of balanced nutrition with chef-curated recipes that prioritize
                 fresh ingredients.
               </p>
@@ -182,32 +188,32 @@
             </p>
           </header>
 
-   {{> menu 
+          {{> menu 
     customClass="menu__list--grid" 
     ariaLabel="Featured Menu" 
     items=homeMenu 
 }}
         </div>
-        <img 
-  src="/src/assets/images/content/plant.png" 
-  alt="" 
-  class="menu__decor" 
-  width="879" 
-  height="946" 
-  aria-hidden="true" 
-  loading="lazy" 
-  decoding="async"
-/>
+        <img
+          src="/src/assets/images/content/plant.png"
+          alt=""
+          class="menu__decor"
+          width="879"
+          height="946"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
       </section>
 
       <!-- CHEF SECTION -->
       <section
-        class="chef-section"
+        class="chef-section  section-spacing"
         aria-labelledby="chef-heading"
       >
         <div class="container grid chef__grid">
-           <div class="chef__visuals">
-           {{> vector-leaf--left}}
+          <div class="chef__visuals">
+            {{> vector-leaf--left}}
 
             <figure class="chef__img-primary">
               <img
@@ -231,12 +237,15 @@
           </div>
 
           <div class="chef__content section-header">
-            <h2 id="chef-heading" class="chef__content--title text-h2 color-primary">Excellent cook</h2>
+            <h2
+              id="chef-heading"
+              class="chef__content--title text-h2 color-primary"
+            >Excellent cook</h2>
             <p class="subtitle">
               Our lead chef brings over 15 years of culinary expertise, transforming simple
               ingredients into extraordinary masterpieces.
             </p>
-             {{> vector-leaf--right}}
+            {{> vector-leaf--right}}
           </div>
 
         </div>
@@ -315,134 +324,14 @@
             class="grid blog__grid"
             aria-label="Blog posts"
           >
-            <li>
-              <article
-                class="blog-card"
-                aria-labelledby="post-1-heading"
-              >
-                <div class="blog-card__img-wrapper">
-                  <img
-                    src="/src/assets/images/content/post-1.jpg"
-                    onerror="this.src = 'https://placehold.co/800x600/EBF0E4/4D4D4D?text=Blog+Post'"
-                    alt="Colorful fresh fruit and vegetables"
-                    class="blog-card__img"
-                    loading="lazy"
-                    width="792"
-                  />
-                  <span class="blog-card__tag">Fashion</span>
-                </div>
-
-                <div class="blog-card__meta">
-                  <img
-                    src="/src/assets/images/content/avatar-julie.png"
-                    onerror="this.src = 'https://placehold.co/60x60/9CAA00/FFFFFF?text=JC'"
-                    alt="Julie Christie"
-                    class="blog-card__avatar"
-                    width="60"
-                  />
-                  <ul
-                    class="blog-card__meta-details"
-                    aria-label="Post metadata"
-                  >
-                    <li>
-                      <address>Julie Christie</address>
-                    </li>
-                    <li aria-hidden="true">&bull;</li>
-                    <li><time datetime="2021-10-17">October 17, 2021</time></li>
-                    <li aria-hidden="true">&bull;</li>
-                    <li><time datetime="15:33">3:33 pm</time></li>
-                    <li aria-hidden="true">&bull;</li>
-                    <li>2 comments</li>
-                  </ul>
-                </div>
-
-                <h3
-                  id="post-1-heading"
-                  class="text-h4 color-primary blog-card__title"
-                >
-                  <a href="/single-post.html">Fruit and vegetables and protection against diseases</a>
-                </h3>
-                <p class="blog-card__excerpt">
-                  Discover the powerful benefits of incorporating a colorful variety of fruits and
-                  vegetables into your daily diet. We explore the latest nutritional science on how
-                  these natural whole foods can boost your immune system.
-                </p>
-                <a
-                  href="/single-post.html"
-                  class="blog-card__link"
-                  aria-label="Read more about Asparagus Spring Salad"
-                >Read More <svg aria-hidden="true">
-                    <use href="#icon-arrow-right"></use>
-                  </svg></a>
-            </li>
-
-            <li>
-              <article
-                class="blog-card"
-                aria-labelledby="post-2-heading"
-              >
-                <div class="blog-card__img-wrapper">
-                  <img
-                    src="/src/assets/images/content/post-2.jpg"
-                    onerror="this.src = 'https://placehold.co/800x600/EBF0E4/4D4D4D?text=Blog+Post'"
-                    alt="Asparagus in wooden plate"
-                    class="blog-card__img"
-                    loading="lazy"
-                    width="792"
-                  />
-                  <span class="blog-card__tag">Fashion</span>
-                </div>
-
-                <div class="blog-card__meta">
-                  <img
-                    src="/src/assets/images/content/avatar-dianne.png"
-                    onerror="this.src = 'https://placehold.co/60x60/9CAA00/FFFFFF?text=DR'"
-                    alt="Dianne Russell"
-                    class="blog-card__avatar"
-                    width="60"
-                  />
-                  <ul
-                    class="blog-card__meta-details"
-                    aria-label="Post metadata"
-                  >
-                    <li>
-                      <address>Dianne Russell</address>
-                    </li>
-                    <li aria-hidden="true">&bull;</li>
-                    <li><time datetime="2021-10-17">October 17, 2021</time></li>
-                    <li aria-hidden="true">&bull;</li>
-                    <li><time datetime="15:33">3:33 pm</time></li>
-                    <li aria-hidden="true">&bull;</li>
-                    <li>2 comments</li>
-                  </ul>
-                </div>
-
-                <h3
-                  id="post-2-heading"
-                  class="text-h4 color-primary blog-card__title"
-                >
-                  <a href="/single-post.html">Asparagus Spring Salad with Rocket, Goat's Cheese</a>
-                </h3>
-                <p class="blog-card__excerpt">
-                  Welcome the fresh flavors of spring with this light and vibrant salad. Crisp
-                  asparagus pairs perfectly with peppery rocket leaves, while crumbled goat's cheese
-                  adds a rich, creamy texture.
-                </p>
-                <a
-                  href="/single-post.html"
-                  class="blog-card__link"
-                  aria-label="Read more about Asparagus Spring Salad"
-                >Read More <svg aria-hidden="true">
-                    <use href="#icon-arrow-right"></use>
-                  </svg></a>
-              </article>
-            </li>
+            {{> card modifier="" items=homeArticles}}
+          </ul>
           </ul>
         </div>
       </section>
 
       <!-- RESERVATION SECTION -->
-      {{> reservation }}
+     {{> reservation isFull=false }}
 
       <!-- CATEGORIES SECTION -->
       <section
@@ -458,7 +347,7 @@
               Calories Energy <br />
               Balance
             </h2>
-            <p  class='subtitle'>
+            <p class='subtitle'>
               Find the perfect nutritional balance for your body. Browse our categories to discover
               dishes that satisfy your cravings and provide lasting energy.
             </p>

@@ -1,8 +1,4 @@
 /* =========================================
-   HOME PAGE SPECIFIC STYLES
-   ========================================= */
-
-/* =========================================
    HERO SECTION
    ========================================= */
 .hero {
@@ -24,12 +20,12 @@
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-md);
+  gap: var(--sp-m);
   z-index: 2;
   pointer-events: none;
 }
 
-.hero__content > * {
+.hero__content>* {
   pointer-events: auto;
 }
 
@@ -50,6 +46,10 @@
   max-inline-size: 50ch;
 }
 
+.hero-home__desc {
+  text-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.5);
+}
+
 /* =========================================
    VISUALS & ANCHOR POSITIONING
    ========================================= */
@@ -61,7 +61,7 @@
   justify-self: end;
   inline-size: clamp(20.25rem, calc(20.25rem + 29.25 * var(--vw-range)), 49.5rem);
   max-inline-size: 100%;
-  min-inline-size: 0; 
+  min-inline-size: 0;
 }
 
 .hero__main-wrapper {
@@ -140,8 +140,7 @@
 .scroll-indicator::after {
   content: '';
   flex: none;
-  border-inline-start: clamp(0.125rem, calc(0.125rem + 0.125 * var(--vw-range)), 0.25rem) dashed
-    var(--c-bg-white);
+  border-inline-start: clamp(0.125rem, calc(0.125rem + 0.125 * var(--vw-range)), 0.25rem) dashed var(--c-bg-white);
   block-size: clamp(9.375rem, calc(9.375rem + 16 * var(--vw-range)), 25.375rem);
   transition: border-color var(--transition, 0.3s ease);
 }
@@ -155,7 +154,6 @@
 .scroll-indicator:focus-visible::after {
   border-color: var(--c-brand-light);
 }
-
 
 @media (min-width: 64rem) {
   .hero__grid {
@@ -226,7 +224,8 @@
 .diet__content {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-m);
+  gap: var(--sp-md);
+  margin-block-end: var(--sp-md);
 }
 
 /* =========================================
@@ -281,6 +280,7 @@
   padding-block-start: var(--sp-xl);
   padding-block-end: 0;
 }
+
 .chef__grid {
   display: flex;
   flex-direction: column;
@@ -376,11 +376,13 @@
     flex: 1 1 59.48%;
   }
 }
+
 /* =========================================
    FEATURES SECTION (Subgrid)
    ========================================= */
 .features {
   text-align: center;
+  padding-block-start: var(--sp-xl);
 }
 
 .features__grid {
@@ -553,10 +555,10 @@
   font-size: var(--fs-body-lg);
   font-weight: 700;
   color: var(--c-text-black);
-  min-inline-size: 3ch; /* Щоб цифри не стрибали при перемиканні */
+  min-inline-size: 3ch;
+  /* Щоб цифри не стрибали при перемиканні */
   text-align: center;
 }
-
 
 @media (min-width: 48rem) {
   .testimonial__quote {
@@ -565,7 +567,7 @@
 
   .testimonial__footer {
     flex-direction: row;
-    justify-content: space-between; 
+    justify-content: space-between;
   }
 }
 
@@ -579,6 +581,7 @@
 }
 
 @media (min-width: 48rem) {
+
   /* Diet */
   .diet__row {
     grid-template-columns: 1fr 1fr;
