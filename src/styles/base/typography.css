@@ -2,6 +2,10 @@
   font-size: var(--fs-hero);
   font-family: var(--ff-heading);
 }
+.text-hero-md {
+  font-size: var(--fs-hero-md);
+  font-family: var(--ff-heading);
+}
 .text-h2 {
   font-size: var(--fs-h2);
   font-family: var(--ff-heading);
@@ -26,8 +30,16 @@
 }
 
 .subtitle {
-font-weight: 400;
-font-size: var(--fs-body-lg);
-line-height: 1.4;
-letter-spacing: 0.02em;
+  font-weight: 400;
+  font-size: var(--fs-body-lg);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--c-bg-white);
+  font-size: var(--fs-body-m);
 }

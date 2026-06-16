@@ -66,14 +66,6 @@ img {
   object-fit: cover;
 }
 
-img:not([src$='.svg']) {
-  background-color: var(--c-text-light-grey);
-}
-
-img[src$='.svg'] {
-  background-color: transparent;
-}
-
 ul,
 ol {
   list-style: none;
@@ -144,9 +136,3 @@ fieldset {
     scroll-behavior: auto !important;
   }
 }
-
-
-/* * {
-  outline: 1px solid red !important;
-  background: rgba(255, 0, 0, 0.05) !important;
-} */

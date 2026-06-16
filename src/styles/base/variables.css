@@ -25,6 +25,7 @@
   */
   
   --fs-hero: clamp(3rem, calc(3rem + 6.25 * var(--vw-range)), 9.25rem);
+  --fs-hero-md: clamp(2.5rem, calc(2.5rem + 3 * var(--vw-range)), 5.5rem);
   --fs-h2: clamp(2.5rem, calc(2.5rem + 4.25 * var(--vw-range)), 6.75rem);
   --fs-h3: clamp(1.75rem, calc(1.75rem + 2.5 * var(--vw-range)), 4.25rem);
   --fs-h4: clamp(1.5rem, calc(1.5rem + 1.5 * var(--vw-range)), 3rem);
@@ -36,9 +37,10 @@
   --fs-body-xs: clamp(0.75rem, calc(0.75rem + 0.125 * var(--vw-range)), 0.875rem);
   --fs-info: clamp(1.2rem, calc(1.2rem + 0.8 * var(--vw-range)), 2rem);
 
-  --grid-max-width: 1644px;
-  --grid-gutter: clamp(1.5rem, calc(1.5rem + 2.25 * var(--vw-range)), 3.75rem);
+  --grid-max-width: 102.75rem;
+  --grid-gutter:  clamp(1.5rem, calc(1.5rem + 2.25 * var(--vw-range)), 3.75rem);
   --container-padding: clamp(1.25rem, calc(1.25rem + 7.375 * var(--vw-range)), 8.625rem);
+  --spacing-section: clamp(8rem, 4rem + 3.5vw, 12rem);
 
   --sp-xs: clamp(0.5rem, calc(0.5rem + 0.5 * var(--vw-range)), 1rem);
   --sp-s: clamp(0.75rem, calc(0.75rem + 0.75 * var(--vw-range)), 1.5rem);
@@ -53,5 +55,6 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --transition: var(--transition-slow) var(--ease-out-expo);
 
+  --btn-xs: clamp(1rem, calc(1rem + 0.94 * var(--vw-range)), 1.94rem);
   --btn-sm: clamp(4rem, calc(4rem + 4.375 * var(--vw-range)), 8.375rem);
 }
