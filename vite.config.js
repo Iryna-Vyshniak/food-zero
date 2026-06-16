@@ -5,36 +5,38 @@ import handlebars from 'vite-plugin-handlebars';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
-import homeData from './src/data/home.json';
+import pagesData from './src/data/pages.json';
 import menuData from './src/data/menu.json';
+import blogData from './src/data/blog-data.json';
 
 
-const pageData = {
-  '/index.html': {
-    title: 'FoodZero | Home',
-    description: 'Experience healthy, sustainable dining and organic recipes at FoodZero restaurant.',
-    homeMenu:  menuData.homeMenu
-  },
-  '/menu.html': {
-    title: 'FoodZero | Our Menu',
-    description: 'Explore our seasonal menu featuring Starters, Mains, and Pastries & Drinks made with fresh ingredients.',
-    menuData: menuData 
-  },
-  '/about.html': {
-    "title": "FoodZero | Who We Are",
-    "description": "Learn about our story, zero-waste philosophy, meet our restaurant manager and executive chef.",
-  },
+// Dynamically generate context to eliminate DRY violations
+const getPageContext = (pagePath) => {
+  // 1. Get base SEO data (Title, Description) from pages.json
+  const baseData = pagesData[pagePath] || {};
+
+  // 2. Map page-specific dynamic data natively
+  const dynamicData = {
+    '/index.html': { homeMenu: menuData.homeMenu, homeArticles: blogData.articles.slice(0, 2) },
+    '/menu.html': { menuData: menuData },
+    '/bloglist.html': {blogData: blogData.articles}, 
+    '/article-meat.html': { widgetBlog: blogData.articles.slice(0, 4) },
+    // Add other page-specific data imports here as the project grows
+  };
+
+  return {
+    ...baseData,
+    ...(dynamicData[pagePath] || {})
+  };
 };
 
 export default defineConfig({
   root: './', 
   base: '/',
   plugins: [
-   handlebars({
+    handlebars({
       partialDirectory: resolve(__dirname, 'src/html/partials'),
-      context(pagePath) {
-        return pageData[pagePath] || {};
-      },
+      context: getPageContext, // Use the dynamic function
     }),
     createSvgIconsPlugin({
       iconDirs: [resolve(process.cwd(), 'src/assets/images/icons')],
@@ -65,19 +67,17 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: false,
-
-    // Налаштування Rollup для багатосторінкової збірки
- rollupOptions: {
+    rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        index: resolve(__dirname, 'index.html'),
         menu: resolve(__dirname, 'menu.html'),
         about: resolve(__dirname, 'about.html'),
+        bloglist: resolve(__dirname, 'bloglist.html'), 
       },
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',
         chunkFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
-          // Запобіжник на випадок відсутності імені файлу
           if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
 
           let extType = assetInfo.name.split('.').at(-1).toLowerCase();
@@ -100,6 +100,6 @@ export default defineConfig({
     cors: true,
   },
   css: {
-    devSourcemap: true, // Sourcemaps для CSS під час розробки
+    devSourcemap: true,
   }
 });
