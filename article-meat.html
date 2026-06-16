@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{> head }}
+        <link
+            rel="stylesheet"
+            href="/src/styles/main.css"
+        />
+        <script
+            type="module"
+            src="/src/js/main.js"
+        ></script>
+    </head>
+    <body>
+        <!-- ================= HEADER PARTIAL ================= -->
+        {{> header modifier="header--transparent"}}
+
+        <!-- ================= OVERLAY MENU PARTIAL ================= -->
+        {{> overlay-menu }}
+        <main id="main-content">
+            <!-- hero -->
+            <section
+                class="hero hero-article"
+                aria-labelledby="hero-heading"
+            >
+                <div class="container hero__container--article">
+                    <span class="hero-badge">Fashion</span>
+                    <h1
+                        id="hero-heading"
+                        class="hero__title--article text-hero-md color-inverse"
+                    >Three Ideas for Cooking <br aria-hidden="true" />Goat Meat at Home</h1>
+
+                    <div class="hero-meta">
+                        <div class="hero-meta__avatar">
+                            <img
+                                src="/src/assets/images/content/hero-avatar-article-meat.png"
+                                onerror="src = 'https://placehold.co/96x96/9CAA00/FFFFFF?text=JC'"
+                                alt="Julie Christie"
+                                loading="lazy"
+                                width="96"
+                            />
+                        </div>
+                        <ul
+                            class="hero-meta__details"
+                            aria-label="Post metadata"
+                        >
+                            <li>
+                                <span class="sr-only">Author:</span>
+                                <span class="hero-meta__author">Julie Christie</span>
+                            </li>
+                            <li aria-hidden="true">&bull;</li>
+                            <li><time datetime="October 17,2021">October 17,2021</time></li>
+                            <li aria-hidden="true">&bull;</li>
+                            <li><time datetime="3:33 pm">3:33 pm</time></li>
+                            <li aria-hidden="true">&bull;</li>
+                            <li>2 comments</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="container section-spacing l-two-cols">
+                <!-- Article Content Section -->
+                <article class="post-content">
+                    <!-- breadcrumbs -->
+
+                    <nav
+                        aria-label="Breadcrumb"
+                        class="breadcrumbs"
+                    >
+                        <ol class="breadcrumbs-list">
+                            <li class="breadcrumbs-item"><a
+                                    href="/"
+                                    class="breadcrumbs-link"
+                                >Home</a></li>
+                            <li class="breadcrumbs-item"><a
+                                    href="/bloglist.html"
+                                    class="breadcrumbs-link"
+                                >Blog</a></li>
+                            <li class="breadcrumbs-item"><a
+                                    href="#"
+                                    class="breadcrumbs-link"
+                                    aria-current="page"
+                                >Three Ideas for Cooking Goat Meat at Home</a></li>
+                        </ol>
+                    </nav>
+
+                    <!-- article content -->
+                    <p>Goat meat, often overlooked in many Western kitchens, is a staple across the globe—from Caribbean curries to Middle Eastern shawarmas. It's incredibly flavorful, lean, and sustainable. Cooking it at home might seem intimidating at first, but with the right techniques, you can achieve tender, melt-in-your-mouth results. Let's explore three straightforward and delicious ways to prepare goat meat in your own kitchen.</p>
+
+                    <figure class="image-mosaic">
+                        <img
+                            src="/src/assets/images/content/article-meat-img-1.png"
+                            alt="Plated goat meat dish with vegetables"
+                            loading="lazy"
+                            width="792"
+                        >
+                        <div class="image-mosaic-col">
+                            <img
+                                src="/src/assets/images/content/article-meat-img-2.png"
+                                alt="Fresh leeks preparation"
+                                loading="lazy"
+                                width="366"
+                            >
+                            <img
+                                src="/src/assets/images/content/article-meat-img-3.png"
+                                alt="Gourmet meat dish styling"
+                                loading="lazy"
+                                width="366"
+                            >
+                        </div>
+                    </figure>
+
+                    <p>The first method is slow-roasting a goat leg or shoulder. Because goat is a lean meat, it benefits immensely from low and slow cooking, which breaks down tough connective tissues without drying it out. Marinate the meat overnight with yogurt, garlic, rosemary, and lemon juice to tenderize it, then roast it at a low temperature for several hours until it easily pulls apart with a fork.</p>
+
+                    <blockquote class="post-quote">
+                        "When slow-cooking goat, patience is your best ingredient. Allow the meat to braise gently until it yields completely to the fork."
+                    </blockquote>
+
+                    <p>Our second idea brings the heat with a robust Jamaican-style goat curry, utilizing scotch bonnet peppers, allspice, and a rich coconut milk base. Simmering the meat in this fragrant sauce infuses it with deep, complex flavors. Finally, for a quicker meal, consider grilling marinated goat chops. A simple wet rub of olive oil, mint, and cumin paired with a hot grill creates a beautiful char on the outside while keeping the inside juicy.</p>
+
+                    <div class="sidebar-widget post-widget">
+                        <div class="post-tags">
+                            <h3 class="widget-title widget-title--main">Tags:</h3>
+                            <ul class="widget-list-tags">
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Design</a></li>
+                                <li class="widget-list-tag"><a
+                                        href="#"
+                                        class="tag-link"
+                                    >Photography</a></li>
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Images</a></li>
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Video</a></li>
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Music</a></li>
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Travel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <footer class="author-bio">
+                        <img
+                            src="/src/assets/images/content/hero-avatar-article-meat.png"
+                            onerror="src = 'https://placehold.co/96x96/9CAA00/FFFFFF?text=JC'"
+                            alt="Julie Christie portrait"
+                            loading="lazy"
+                            width="220"
+                        />
+                        <div>
+                            <h3 class="text-h4 color-primary">Julie Christie</h3>
+                            <p>Food enthusiast and recipe developer specializing in global cuisines and sustainable ingredient sourcing.</p>
+                        </div>
+                    </footer>
+                </article>
+
+                <aside class="sidebar">
+                    <section class="sidebar-widget">
+                        <form
+                            class="search-form"
+                            action="#"
+                            role="search"
+                        >
+                            <label
+                                for="site-search"
+                                class="sr-only"
+                            >Search the site</label>
+                            <input
+                                type="search"
+                                id="site-search"
+                                placeholder="Search..."
+                            >
+                            <button
+                                type="submit"
+                                aria-label="Submit Search"
+                            >
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <circle
+                                        cx="11"
+                                        cy="11"
+                                        r="8"
+                                    ></circle>
+                                    <line
+                                        x1="21"
+                                        y1="21"
+                                        x2="16.65"
+                                        y2="16.65"
+                                    ></line>
+                                </svg>
+                            </button>
+                        </form>
+                    </section>
+
+                    <section class="sidebar-widget">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul class="widget-list">
+                            <li class="widget-list-item"><a href="#">Fashion</a> <span>16</span></li>
+                            <li class="widget-list-item"><a href="#">Food</a> <span>20</span></li>
+                            <li class="widget-list-item"><a href="#">Music</a> <span>12</span></li>
+                            <li class="widget-list-item"><a href="#">Travel</a> <span>36</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="sidebar-widget">
+                        <h3 class="widget-title">Recent Comments</h3>
+                        <ul class="widget-list widget-list-comments">
+                            <li class="widget-list-post__comment"><strong class="widget-list-post__author">John Mccain</strong> in Vegan baked oatmeal with fresh berries</li>
+                            <li class="widget-list-post__comment"><strong class="widget-list-post__author">Ana</strong> 50 Foods That Are Super Healthy</li>
+                            <li class="widget-list-post__comment"><strong class="widget-list-post__author">Camilla</strong> How Many Carbs Should You Eat for Weight Loss?</li>
+                            <li class="widget-list-post__comment"><strong class="widget-list-post__author">Dailey</strong> 22 Foods That Can Give You More Energy</li>
+                        </ul>
+                    </section>
+
+                    <section class="sidebar-widget">
+                        <h3 class="widget-title">Archives</h3>
+                        <ul class="widget-list">
+                            <li class="widget-list-item"><a href="#">April 2026</a> <span>12</span></li>
+                            <li class="widget-list-item"><a href="#">May 2026</a> <span>6</span></li>
+                            <li class="widget-list-item"><a href="#">June 2026</a> <span>23</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="sidebar-widget">
+                        <h3 class="widget-title">Recent Posted</h3>
+                        <ul class="widget-list-blog">
+                            {{> card  modifier="blog-card--compact" items=widgetBlog}}
+                        </ul>
+                    </section>
+                    <section class="sidebar-widget">
+                        <div class="post-tags">
+                            <h3 class="widget-title">Tags</h3>
+                            <ul class="widget-list-tags">
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Design</a></li>
+                                <li class="widget-list-tag"><a
+                                        href="#"
+                                        class="tag-link"
+                                    >Photography</a></li>
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Images</a></li>
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Video</a></li>
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Music</a></li>
+                                <li class="widget-list-tag"> <a
+                                        href="#"
+                                        class="tag-link"
+                                    >Travel</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+
+            <nav aria-label="Post Navigation">
+                <ul class="pagination-nav post-nav">
+
+                    <!-- Previous Item -->
+                    <li class="pagination__item pagination__item--prev nav-card nav-card--prev">
+                        <a
+                            href="/bloglist.html"
+                            class="pagination__link color-inverse"
+                        >
+                            <span class="pagination__label nav-card__label">
+                                <svg aria-hidden="true">
+                                    <use href="#icon-arrow-left"></use>
+                                </svg>
+                                Previous Page
+                            </span>
+                            <span class="pagination__title nav-card__title">7 Reasons to Start Your Day With Lemon Water</span>
+                        </a>
+                    </li>
+
+
+
+
+                    <!-- Next Item -->
+                    <li class="pagination__item pagination__item--next nav-card nav-card--next">
+                        <a
+                            href="/bloglist.html"
+                            class="pagination__link"
+                        >
+                            <span class="pagination__label nav-card__label">
+                                Next Page
+                                <svg aria-hidden="true">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </span>
+                            <span class="pagination__title nav-card__title">12 Sparkling Wines We're Loving This Summer</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <section
+                id="comments"
+                class="section-spacing container"
+                aria-labelledby="comments-title"
+            >
+                <div class="comments-wrapper">
+                    <h2
+                        id="comments-title"
+                        class="comments-section__title"
+                    >4 Comments</h2>
+
+                    <ul class="comments-list">
+                        <li class="comments-list__item">
+                            <article class="comment">
+                                <img
+                                    src="/src/assets/images/content/blog-avatar-6.png"
+                                    alt="Leslie Alexander"
+                                    class="comment__avatar"
+                                    loading="lazy"
+                                    width="60"
+                                    height="60"
+                                >
+                                <div class="comment__content">
+                                    <div class="comment__header">
+                                        <h3 class="comment__author">Leslie Alexander</h3>
+                                        <button
+                                            class="comment__reply-btn"
+                                            type="button"
+                                            aria-label="Reply to Leslie Alexander"
+                                        >Reply</button>
+                                    </div>
+                                    <time
+                                        class="comment__time"
+                                        datetime="2020-03-12T19:08:00"
+                                    >March 12, 2020, 7:08 pm</time>
+                                    <p class="comment__text">I tried the slow-roasted shoulder recipe last weekend and it was a massive hit with my family. The meat was so tender and the yogurt marinade made all the difference!</p>
+                                </div>
+                            </article>
+
+                            <ul class="comments-list comments-list--reply">
+                                <li class="comments-list__item">
+                                    <article class="comment">
+                                        <img
+                                            src="/src/assets/images/content/blog-avatar-3.png"
+                                            alt="Jenifier Lopez"
+                                            class="comment__avatar"
+                                            loading="lazy"
+                                            width="60"
+                                            height="60"
+                                        >
+                                        <div class="comment__content">
+                                            <div class="comment__header">
+                                                <h3 class="comment__author">Jenifier Lopez</h3>
+                                                <button
+                                                    class="comment__reply-btn"
+                                                    type="button"
+                                                    aria-label="Reply to Jenifier Lopez"
+                                                >Reply</button>
+                                            </div>
+                                            <time
+                                                class="comment__time"
+                                                datetime="2020-03-12T19:08:00"
+                                            >March 12, 2020, 7:08 pm</time>
+                                            <p class="comment__text">That sounds amazing! Did you let it marinate overnight, or just for a few hours before roasting? I'm planning to make it this Sunday.</p>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="comments-list__item">
+                            <article class="comment">
+                                <img
+                                    src="/src/assets/images/content/blog-avatar-7.png"
+                                    alt="Jane Cooper"
+                                    class="comment__avatar"
+                                    loading="lazy"
+                                    width="60"
+                                    height="60"
+                                >
+                                <div class="comment__content">
+                                    <div class="comment__header">
+                                        <h3 class="comment__author">Jane Cooper</h3>
+                                        <button
+                                            class="comment__reply-btn"
+                                            type="button"
+                                            aria-label="Reply to Jane Cooper"
+                                        >Reply</button>
+                                    </div>
+                                    <time
+                                        class="comment__time"
+                                        datetime="2020-03-12T19:08:00"
+                                    >March 12, 2020, 7:08 pm</time>
+                                    <p class="comment__text">Absolutely delicious! I substituted the goat cheese with feta because that's what I had on hand, and it still turned out incredible. Definitely adding this to my weekly rotation.</p>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="comments-list__item">
+                            <article class="comment">
+                                <img
+                                    src="/src/assets/images/content/blog-avatar-8.png"
+                                    alt="Jenny Wilson"
+                                    class="comment__avatar"
+                                    loading="lazy"
+                                    width="60"
+                                    height="60"
+                                >
+                                <div class="comment__content">
+                                    <div class="comment__header">
+                                        <h3 class="comment__author">Jenny Wilson</h3>
+                                        <button
+                                            class="comment__reply-btn"
+                                            type="button"
+                                            aria-label="Reply to Jenny Wilson"
+                                        >Reply</button>
+                                    </div>
+                                    <time
+                                        class="comment__time"
+                                        datetime="2020-03-12T19:08:00"
+                                    >March 12, 2020, 7:08 pm</time>
+                                    <p class="comment__text">Thank you for sharing this! The step-by-step instructions were so easy to follow. My asparagus stayed perfectly crisp-tender. Can't wait to try more of your salad recipes.</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+
+                    <div class="comment-form-area">
+                        <h3 class="comment-form-title color-primary">Leave a Reply</h3>
+                        <form class="comment-form">
+                            <div class="form-group">
+                                <label for="comment-text">Comment</label>
+                                <textarea
+                                    id="comment-text"
+                                    class="form-input"
+                                    required
+                                ></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="comment-name">Name*</label>
+                                <input
+                                    type="text"
+                                    id="comment-name"
+                                    class="form-input"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="comment-email">Email*</label>
+                                <input
+                                    type="email"
+                                    id="comment-email"
+                                    class="form-input"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="comment-website">Website</label>
+                                <input
+                                    type="url"
+                                    id="comment-website"
+                                    class="form-input"
+                                >
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn--outline-dark"
+                            >Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            {{> footer }}
+    </body>
+</html>
