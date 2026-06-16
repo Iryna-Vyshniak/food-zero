@@ -4,16 +4,64 @@
 .reservation {
   background-color: var(--c-bg-primary);
   text-align: center;
-  container-type: inline-size;
-  container-name: reservation;
+  position: relative;
+  isolation: isolate;
+}
+
+.reservation__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .reservation__header {
+  position: relative;
   margin-block-end: var(--sp-lg);
 }
 
+.reservation__header--full {
+  max-inline-size: 61.5625rem;
+  position: relative;
+}
+
+.reservation__header--full::before {
+  content: '';
+  position: absolute;
+  inset-block-start: -50%;
+  inset-inline-start: -15.5rem;
+  inline-size: clamp(18.75rem, 25vi, 31.9375rem);
+  aspect-ratio: 511 / 346;
+
+  background-image: url('/src/assets/images/icons/vector-mint.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@media (max-width: 47.9375rem) {
+  .reservation__header--full::before {
+    inset-inline-start: -1rem;
+    opacity: 0.25;
+  }
+}
+
+@media (min-width: 64rem) {
+  .reservation__title,
+  .reservation__subtitle {
+    margin-inline-start: 0;
+  }
+  .reservation__subtitle {
+    align-self: flex-start;
+  }
+}
+
 .reservation__form {
-  max-inline-size: 100%;
+  inline-size: 100%;
+  max-inline-size: 102.75rem;
   margin-inline: auto;
   display: grid;
   justify-items: center;
@@ -26,8 +74,8 @@
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile first */
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 24px;
   text-align: start;
 }
 
@@ -39,23 +87,30 @@
 
 .form-control {
   inline-size: 100%;
-  padding-block: 1rem;
-  padding-inline-start: 1.5rem;
-  padding-inline-end: 3rem;
-  border: 1px solid var(--c-text-black);
+  padding-block: 19.2px;
+  padding-inline-start: 24px;
+  padding-inline-end: 48px;
+  border: 0.0625rem solid var(--c-text-black);
   background-color: transparent !important;
   color: var(--c-text-black);
   appearance: none;
   -webkit-appearance: none;
   border-radius: 0;
   outline: none;
-  transition: outline var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
   font-family: var(--ff-body);
+  font-size: var(--fs-body);
+}
+
+.form-control::placeholder {
+  color: var(--c-text-black);
 }
 
 .form-control:focus-visible {
-  outline: 2px solid var(--c-brand-dark);
-  outline-offset: 4px;
+  border-color: var(--c-brand-dark);
+  box-shadow: 0 0 0 0.1875rem rgba(35, 48, 0, 0.15);
 }
 
 /* =========================================
@@ -63,11 +118,9 @@
    ========================================= */
 .form-control::-webkit-calendar-picker-indicator {
   position: absolute;
-  inset-inline-end: 1.2rem;
-  inset-block-start: 50%;
-  transform: translateY(-50%);
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
   margin: 0;
   padding: 0;
   opacity: 0;
@@ -77,11 +130,11 @@
 
 .input-icon {
   position: absolute;
-  inset-inline-end: 1.2rem;
+  inset-inline-end: 19.2px;
   inset-block-start: 50%;
   transform: translateY(-50%);
-  inline-size: 1.25rem;
-  block-size: 1.25rem;
+  inline-size: 20px;
+  block-size: 20px;
   pointer-events: none;
   stroke: var(--c-text-black);
   fill: none;
@@ -89,10 +142,20 @@
 }
 
 /* =========================================
-   CONTAINER QUERIES
+   DESKTOP RESPONSIVE FORM GRID
    ========================================= */
-@container reservation (min-inline-size: 48rem) {
-  .form-grid {
+@media (min-width: 48rem) {
+  /* Simple Form: Perfect 3-column row */
+  .form-grid--simple {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Full Form: 2-column asymmetric layout matching 1000046686.jpg */
+  .form-grid--full {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .input-group--full-width {
+    grid-column: 1 / -1; /* Spans full width across 2 columns */
   }
 }
