@@ -1,3 +1,6 @@
+/* =========================================
+   1. OVERLAY MENU BASE & BACKGROUND
+   ========================================= */
 .overlay-menu {
   inset: 0;
   inline-size: 100%;
@@ -12,23 +15,24 @@
   padding: 0;
   margin: 0;
 
-  /* Initial closed state: shifted to the right */
-  translate: 100% 0;
+  overflow: hidden;
 
-  /* Modern discrete transition handling */
+  will-change: translate;
+  translate: 100% 0;
   transition:
     translate var(--transition-slow) var(--ease-out-expo),
     display var(--transition-slow) allow-discrete,
     overlay var(--transition-slow) allow-discrete;
 }
 
-.overlay-menu:before {
+.overlay-menu::before {
   content: '';
   position: absolute;
   inset: 0;
   background: var(--c-brand-dark);
   opacity: 0.8;
   z-index: 1;
+  pointer-events: none; 
 }
 
 .overlay-menu::backdrop {
@@ -42,14 +46,13 @@
 
 .overlay-menu[open] {
   translate: 0 0;
-  display: grid;
+  display: block;
 }
 
 .overlay-menu[open]::backdrop {
   opacity: 1;
 }
 
-/* Анімація появи з дискретними властивостями (@starting-style) */
 @starting-style {
   .overlay-menu[open] {
     translate: 100% 0;
@@ -59,70 +62,123 @@
   }
 }
 
+/* =========================================
+   2. SCROLL CONTAINER & LAYOUT
+   ========================================= */
 .overlay-menu__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+
   display: grid;
-  grid-template-rows: auto 1fr;
   block-size: 100%;
-  padding-block: var(--sp-sm) var(--sp-xl);
-  padding-inline: var(--container-padding);
+  padding: clamp(1rem, calc(1rem + (28 - 16) * var(--vw-range)), 1.75rem)
+    clamp(1.25rem, calc(1.25rem + (40 - 20) * var(--vw-range)), 2.5rem)
+    clamp(1.5rem, calc(1.5rem + (60 - 24) * var(--vw-range)), 3.75rem)
+    clamp(1.75rem, calc(1.75rem + (60 - 28) * var(--vw-range)), 3.75rem);
+  gap: clamp(1.25rem, calc(1.25rem + (60 - 20) * var(--vw-range)), 3.75rem);
+
   overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
   container: overlay-container inline-size;
 }
 
-.overlay-menu__header {
-  display: flex;
-  justify-content: flex-start;
-  padding-block-end: var(--sp-lg);
+.overlay-menu__inner::-webkit-scrollbar {
+  display: none;
 }
 
+/* =========================================
+   3. CLOSE BUTTON
+   ========================================= */
 .overlay-menu__close {
-  inline-size: var(--btn-sm);
-  block-size: var(--btn-sm);
-  color: var(--c-bg-white);
-  padding: 0.5rem;
-  margin-inline-start: -0.5rem;
-  transition: color var(--transition);
+  position: absolute;
+  inset-block-start: clamp(24px, 4vh, 48px);
+  inset-inline-start: var(--container-padding);
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-black);
   background: transparent;
   border: none;
   cursor: pointer;
+  padding: 8px;
+  margin-inline-start: -8px; 
+  transition: color var(--transition);
 }
 
 .icon-close {
-  inline-size: var(--btn-sm);
-  block-size: var(--btn-sm);
+  inline-size: 24px;
+  block-size: 24px;
+  stroke: currentColor;
+  stroke-width: 1.5;
 }
 
-.overlay-menu__close:hover .icon-close,
-.overlay-menu__close:focus-visible .icon-close {
+.overlay-menu__close:hover,
+.overlay-menu__close:focus-visible {
   color: var(--c-brand-light);
 }
 
+/* =========================================
+   4. BODY GRID 
+   ========================================= */
 .overlay-menu__body {
   display: grid;
-  gap: var(--sp-xl);
-  align-content: start;
+  gap: var(--sp-md);
+  align-content: center;
+  block-size: 100%;
+  flex: 1;
 }
 
+.overlay-menu__nav,
+.overlay-menu__contact {
+  margin-block: var(--sp-lg);
+}
+
+@container overlay-container (min-width: 768px) {
+  .overlay-menu__body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    align-content: stretch;
+  }
+
+  .overlay-menu__nav {
+    align-self: start;
+    justify-self: start;
+  }
+
+  .overlay-menu__contact {
+    align-self: end;
+    justify-self: end;
+  }
+}
+
+/* =========================================
+   5. NAVIGATION LIST
+   ========================================= */
 .overlay-nav__list {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-sm);
+  gap: var(--sp-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .overlay-nav__link,
 .overlay-nav__toggle {
   font-family: var(--ff-heading);
-  font-size: var(--fs-h2);
-  font-weight: 700;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 400;
   color: var(--c-bg-white);
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   background: transparent;
   border: none;
+  padding: 0;
   cursor: pointer;
   text-decoration: none;
   transition: color var(--transition);
@@ -131,80 +187,86 @@
 .overlay-nav__link::before,
 .overlay-nav__toggle::before {
   content: '•';
-  color: var(--c-brand-light);
-  font-size: 0.5em;
-  transform: translateY(-0.125rem);
+  color: inherit;
+  font-size: 0.7em;
+  transform: translateY(-0.1em);
 }
 
 .overlay-nav__link:hover,
 .overlay-nav__toggle:hover,
 .overlay-nav__link:focus-visible,
-.overlay-nav__toggle:focus-visible {
+.overlay-nav__toggle:focus-visible,
+.overlay-nav__toggle[aria-expanded='true'] {
   color: var(--c-brand-light);
 }
 
+/* =========================================
+   6. SUBMENU (ACCORDION LOGIC)
+   ========================================= */
 .overlay-nav__sublist {
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding-inline-start: 2rem;
-  padding-block-start: 1rem;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .overlay-nav__toggle[aria-expanded='true'] + .overlay-nav__sublist {
-  display: flex;
+  grid-template-rows: 1fr;
 }
 
-.overlay-nav__toggle[aria-expanded='true'] + .overlay-nav__toggle {
-  color: var(--c-brand-light);
+.overlay-nav__sublist-inner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-inline-start: clamp(24px, 3vw, 40px);
+  padding-block-start: var(--sp-sm);
 }
 
 .overlay-nav__sublink {
-  font-family: var(--ff-body);
-  font-size: var(--fs-body);
-  color: var(--c-bg-primary);
+  font-family: var(--ff-heading);
+  font-size: clamp(16px, 2vw, 18px);
+  color: var(--c-bg-white);
   text-decoration: none;
   transition: color var(--transition);
 }
 
 .overlay-nav__sublink:hover,
 .overlay-nav__sublink:focus-visible {
-  color: var(--c-brand-light);
+  color: var(--c-bg-white);
 }
 
+/* =========================================
+   7. CONTACT ASIDE
+   ========================================= */
 .overlay-menu__contact {
-  align-self: end;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-sm);
-  padding-block-start: var(--sp-md);
-  font-style: normal;
+  gap: var(--sp-md);
+  color: var(--c-bg-white);
+  margin-top: auto;
+  margin-bottom: clamp(4vh, 6vh, 8vh);
+  padding-left: .125rem;
 }
 
 .overlay-menu__contact-title {
   font-family: var(--ff-heading);
-  font-size: var(--fs-info);
+  font-size: 1.5rem;
   color: var(--c-bg-white);
-  padding-block-end: 0.5rem;
-  border-bottom: 0.25rem dashed var(--c-bg-white);
+  padding-block-end: .75rem;
+  margin: 0;
+  border-bottom: .25rem dashed rgba(255, 255, 255, 0.5);
+  inline-size: 100%;
 }
 
-@container overlay-container (min-width: 48rem) {
-  .overlay-menu__body {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-
-  .overlay-menu__contact {
-    border-block-start: none;
-    padding-block-start: 0;
-    padding-inline-start: var(--sp-xl);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .overlay-menu,
-  .overlay-menu::backdrop {
-    transition: none;
-  }
+.overlay-menu__contact-details {
+  font-family: var(--ff-body);
+  font-size: .875rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
 }
